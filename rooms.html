@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover our comfortable rooms and comprehensive services at Ethiopia Hotel Gondar. Standard, Deluxe rooms and suites with modern amenities.">
+    <title>Rooms & Services | Ethiopia Hotel Gondar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #d4af37;
+            --accent: #2d3748;
+            --light: #f8f9fa;
+            --dark: #2d3436;
+            --white: #ffffff;
+            --gray: #718096;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .amharic-font {
+            font-family: 'Noto Sans Ethiopic', 'Inter', sans-serif;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--white);
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            display: flex;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .lang-btn {
+            padding: 10px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(26, 54, 93, 0.05);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hotel-name {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .location {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 15px;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 100px;
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Rooms Section */
+        .rooms-section {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .room-categories {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .room-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .room-tab {
+            padding: 12px 24px;
+            background: var(--white);
+            border: 2px solid transparent;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--primary);
+        }
+
+        .room-tab:hover {
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .room-tab.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .room-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .room-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .room-detail {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .room-image {
+            height: 100%;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .room-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .room-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .room-info {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .room-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .room-price {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .room-features {
+            margin-bottom: 30px;
+        }
+
+        .room-features h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item i {
+            color: var(--secondary);
+            width: 20px;
+        }
+
+        .inquiry-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        .inquiry-btn:hover {
+            background: #152642;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(26, 54, 93, 0.2);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: var(--border-radius-lg);
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transition: var(--transition);
+            transform-origin: left;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .service-hours {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Amenities Section */
+        .amenities-section {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+
+        .amenities-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .amenity-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .amenity-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after, .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .room-detail {
+                grid-template-columns: 1fr;
+            }
+            
+            .room-image {
+                min-height: 400px;
+            }
+            
+            .room-info {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-lg);
+                text-align: center;
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .room-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .room-tab {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .room-info h3 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="am">አማ</button>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="hotel-name" data-key="hotel.name">Ethiopia Hotel</span>
+                    <span class="location" data-key="hotel.location">Gondar, Ethiopia</span>
+                </div>
+            </a>
+            
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" data-key="nav.home">Home</a></li>
+                <li><a href="rooms.html" data-key="nav.rooms">Rooms & Services</a></li>
+                <li><a href="menu.html" data-key="nav.menu">Menu</a></li>
+                <li><a href="about.html" data-key="nav.about">About</a></li>
+                <li><a href="contact.html" data-key="nav.contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1 data-key="rooms.title">Rooms & Services</h1>
+            <p data-key="rooms.subtitle">Experience comfort and convenience with our carefully designed rooms and comprehensive hotel services</p>
+        </section>
+
+        <!-- Rooms Section -->
+        <section class="rooms-section" id="rooms">
+            <div class="section-title">
+                <h2 data-key="rooms.ourrooms">Our Rooms</h2>
+                <p data-key="rooms.select">Select from our range of comfortable accommodations designed for your relaxation</p>
+            </div>
+
+            <div class="room-categories">
+                <!-- Room Tabs -->
+                <div class="room-tabs">
+                    <button class="room-tab active" data-room="standard" data-key="rooms.tab.standard">Standard Room</button>
+                    <button class="room-tab" data-room="deluxe" data-key="rooms.tab.deluxe">Deluxe Room</button>
+                    <button class="room-tab" data-room="suite" data-key="rooms.tab.suite">Suite</button>
+                </div>
+
+                <!-- Standard Room -->
+                <div class="room-content active" id="standard-room">
+                    <div class="room-detail">
+                        <div class="room-image">
+                            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Standard Room">
+                        </div>
+                        <div class="room-info">
+                            <h3 data-key="rooms.standard.title">Standard Room</h3>
+                            <div class="room-price" data-key="rooms.standard.price">From 1,200 ETB / Night</div>
+                            
+                            <div class="room-features">
+                                <h4 data-key="rooms.features">Room Features</h4>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-bed"></i>
+                                        <span data-key="rooms.standard.feature1">Comfortable Double Bed</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-bath"></i>
+                                        <span data-key="rooms.standard.feature2">Private Bathroom</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-tv"></i>
+                                        <span data-key="rooms.standard.feature3">Satellite TV</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-wifi"></i>
+                                        <span data-key="rooms.standard.feature4">Free WiFi</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-snowflake"></i>
+                                        <span data-key="rooms.standard.feature5">Air Conditioning</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-coffee"></i>
+                                        <span data-key="rooms.standard.feature6">Tea/Coffee Maker</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p data-key="rooms.standard.description">Our Standard Rooms offer comfortable accommodation with all essential amenities for a pleasant stay. Perfect for solo travelers or couples looking for value without compromising on comfort.</p>
+                            
+                            <a href="contact.html" class="inquiry-btn" data-key="rooms.inquire">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Inquire Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deluxe Room -->
+                <div class="room-content" id="deluxe-room">
+                    <div class="room-detail">
+                        <div class="room-image">
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80" alt="Deluxe Room">
+                        </div>
+                        <div class="room-info">
+                            <h3 data-key="rooms.deluxe.title">Deluxe Room</h3>
+                            <div class="room-price" data-key="rooms.deluxe.price">From 1,800 ETB / Night</div>
+                            
+                            <div class="room-features">
+                                <h4 data-key="rooms.features">Room Features</h4>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-bed"></i>
+                                        <span data-key="rooms.deluxe.feature1">King Size Bed</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-bath"></i>
+                                        <span data-key="rooms.deluxe.feature2">Modern Bathroom</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-tv"></i>
+                                        <span data-key="rooms.deluxe.feature3">Smart TV</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-wifi"></i>
+                                        <span data-key="rooms.deluxe.feature4">High-Speed WiFi</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-snowflake"></i>
+                                        <span data-key="rooms.deluxe.feature5">AC & Heating</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-couch"></i>
+                                        <span data-key="rooms.deluxe.feature6">Sitting Area</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-mug-hot"></i>
+                                        <span data-key="rooms.deluxe.feature7">Coffee Station</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-suitcase"></i>
+                                        <span data-key="rooms.deluxe.feature8">Work Desk</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p data-key="rooms.deluxe.description">Deluxe Rooms offer enhanced space and amenities for a more comfortable stay. Featuring a separate sitting area and premium facilities, these rooms are ideal for business travelers and families.</p>
+                            
+                            <a href="contact.html" class="inquiry-btn" data-key="rooms.inquire">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Inquire Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suite -->
+                <div class="room-content" id="suite-room">
+                    <div class="room-detail">
+                        <div class="room-image">
+                            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Suite">
+                        </div>
+                        <div class="room-info">
+                            <h3 data-key="rooms.suite.title">Executive Suite</h3>
+                            <div class="room-price" data-key="rooms.suite.price">From 2,500 ETB / Night</div>
+                            
+                            <div class="room-features">
+                                <h4 data-key="rooms.features">Suite Features</h4>
+                                <div class="features-grid">
+                                    <div class="feature-item">
+                                        <i class="fas fa-bed"></i>
+                                        <span data-key="rooms.suite.feature1">Master Bedroom</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-couch"></i>
+                                        <span data-key="rooms.suite.feature2">Living Room</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-bath"></i>
+                                        <span data-key="rooms.suite.feature3">Luxury Bathroom</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-tv"></i>
+                                        <span data-key="rooms.suite.feature4">Multiple TVs</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-wifi"></i>
+                                        <span data-key="rooms.suite.feature5">Premium WiFi</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-mug-hot"></i>
+                                        <span data-key="rooms.suite.feature6">Mini Bar</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-briefcase"></i>
+                                        <span data-key="rooms.suite.feature7">Executive Desk</span>
+                                    </div>
+                                    <div class="feature-item">
+                                        <i class="fas fa-city"></i>
+                                        <span data-key="rooms.suite.feature8">City View</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p data-key="rooms.suite.description">Our Executive Suite offers the ultimate in luxury and space. With separate living and sleeping areas, premium amenities, and panoramic views, it's perfect for extended stays and special occasions.</p>
+                            
+                            <a href="contact.html" class="inquiry-btn" data-key="rooms.inquire">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>Inquire Now</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services-section" id="services">
+            <div class="section-title">
+                <h2 data-key="services.title">Hotel Services</h2>
+                <p data-key="services.subtitle">Comprehensive services to make your stay comfortable and memorable</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 data-key="service1.title">Restaurant & Dining</h3>
+                    <p data-key="service1.description">Enjoy traditional Ethiopian cuisine and international dishes prepared by our experienced chefs in a warm, welcoming atmosphere.</p>
+                    <div class="service-hours">
+                        <i class="fas fa-clock"></i>
+                        <span data-key="service1.hours">7:00 AM - 10:00 PM Daily</span>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3 data-key="service2.title">24/7 Reception</h3>
+                    <p data-key="service2.description">Our reception is open round-the-clock to assist you with check-in, check-out, and any requests during your stay.</p>
+                    <div class="service-hours">
+                        <i class="fas fa-clock"></i>
+                        <span data-key="service2.hours">24 Hours Daily</span>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3 data-key="service3.title">Secure Parking</h3>
+                    <p data-key="service3.description">Guarded parking facility available for hotel guests. CCTV surveillance and security personnel ensure vehicle safety.</p>
+                    <div class="service-hours">
+                        <i class="fas fa-clock"></i>
+                        <span data-key="service3.hours">24 Hours Daily</span>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3 data-key="service4.title">Laundry Service</h3>
+                    <p data-key="service4.description">Professional laundry and dry cleaning services available daily. Same-day service for hotel guests.</p>
+                    <div class="service-hours">
+                        <i class="fas fa-clock"></i>
+                        <span data-key="service4.hours">8:00 AM - 8:00 PM Daily</span>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-suitcase-rolling"></i>
+                    </div>
+                    <h3 data-key="service5.title">Luggage Storage</h3>
+                    <p data-key="service5.description">Secure luggage storage available for early arrivals and late departures. Free for hotel guests.</p>
+                    <div class="service-hours">
+                        <i class="fas fa-clock"></i>
+                        <span data-key="service5.hours">24 Hours Daily</span>
+                    </div>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 data-key="service6.title">Tour Assistance</h3>
+                    <p data-key="service6.description">Our concierge can help arrange tours, transportation, and provide information about Gondar's attractions.</p>
+                    <div class="service-hours">
+                        <i class="fas fa-clock"></i>
+                        <span data-key="service6.hours">7:00 AM - 9:00 PM Daily</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amenities Section -->
+        <section class="amenities-section">
+            <div class="section-title">
+                <h2 data-key="amenities.title">Hotel Amenities</h2>
+                <p data-key="amenities.subtitle">Additional facilities available for all our guests</p>
+            </div>
+
+            <div class="amenities-grid">
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div>
+                        <h4 data-key="amenity1.title">Free High-Speed WiFi</h4>
+                        <p data-key="amenity1.text">Available throughout the hotel</p>
+                    </div>
+                </div>
+
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h4 data-key="amenity2.title">24/7 Security</h4>
+                        <p data-key="amenity2.text">CCTV and security personnel</p>
+                    </div>
+                </div>
+
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <div>
+                        <h4 data-key="amenity3.title">Air Conditioning</h4>
+                        <p data-key="amenity3.text">All rooms and public areas</p>
+                    </div>
+                </div>
+
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <div>
+                        <h4 data-key="amenity4.title">Satellite TV</h4>
+                        <p data-key="amenity4.text">Multiple international channels</p>
+                    </div>
+                </div>
+
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <h4 data-key="amenity5.title">Room Service</h4>
+                        <p data-key="amenity5.text">Available during restaurant hours</p>
+                    </div>
+                </div>
+
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <div>
+                        <h4 data-key="amenity6.title">Wake-up Service</h4>
+                        <p data-key="amenity6.text">Available upon request</p>
+                    </div>
+                </div>
+
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <div>
+                        <h4 data-key="amenity7.title">First Aid</h4>
+                        <p data-key="amenity7.text">Basic medical assistance available</p>
+                    </div>
+                </div>
+
+                <div class="amenity-item">
+                    <div class="amenity-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div>
+                        <h4 data-key="amenity8.title">Currency Exchange</h4>
+                        <p data-key="amenity8.text">Assistance with currency exchange</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3 data-key="footer.name">Ethiopia Hotel</h3>
+                <p data-key="footer.tagline">Gondar's Premier Hospitality Destination</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4 data-key="footer.quicklinks">Quick Links</h4>
+                <ul>
+                    <li><a href="index.html" data-key="footer.home">Home</a></li>
+                    <li><a href="rooms.html" data-key="footer.rooms">Rooms & Services</a></li>
+                    <li><a href="menu.html" data-key="footer.menu">Restaurant Menu</a></li>
+                    <li><a href="about.html" data-key="footer.about">About Us</a></li>
+                    <li><a href="contact.html" data-key="footer.contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4 data-key="footer.contactus">Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-key="footer.address">Gondar City Center, Gondar, Ethiopia</span></p>
+                <p><i class="fas fa-phone-alt"></i> <span data-key="footer.phone">+251 XX XXX XXXX</span></p>
+                <p><i class="fas fa-envelope"></i> <span data-key="footer.email">info@ethiopiahotel-gondar.com</span></p>
+                <p><i class="fas fa-clock"></i> <span data-key="footer.hours">24/7 Reception & Services</span></p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; <span id="current-year"></span> <span data-key="footer.copyright">Ethiopia Hotel Gondar. All Rights Reserved.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Data
+        const translations = {
+            en: {
+                "hotel.name": "Ethiopia Hotel",
+                "hotel.location": "Gondar, Ethiopia",
+                "nav.home": "Home",
+                "nav.rooms": "Rooms & Services",
+                "nav.menu": "Menu",
+                "nav.about": "About",
+                "nav.contact": "Contact",
+                "rooms.title": "Rooms & Services",
+                "rooms.subtitle": "Experience comfort and convenience with our carefully designed rooms and comprehensive hotel services",
+                "rooms.ourrooms": "Our Rooms",
+                "rooms.select": "Select from our range of comfortable accommodations designed for your relaxation",
+                "rooms.tab.standard": "Standard Room",
+                "rooms.tab.deluxe": "Deluxe Room",
+                "rooms.tab.suite": "Suite",
+                "rooms.standard.title": "Standard Room",
+                "rooms.standard.price": "From 1,200 ETB / Night",
+                "rooms.standard.feature1": "Comfortable Double Bed",
+                "rooms.standard.feature2": "Private Bathroom",
+                "rooms.standard.feature3": "Satellite TV",
+                "rooms.standard.feature4": "Free WiFi",
+                "rooms.standard.feature5": "Air Conditioning",
+                "rooms.standard.feature6": "Tea/Coffee Maker",
+                "rooms.standard.description": "Our Standard Rooms offer comfortable accommodation with all essential amenities for a pleasant stay. Perfect for solo travelers or couples looking for value without compromising on comfort.",
+                "rooms.deluxe.title": "Deluxe Room",
+                "rooms.deluxe.price": "From 1,800 ETB / Night",
+                "rooms.deluxe.feature1": "King Size Bed",
+                "rooms.deluxe.feature2": "Modern Bathroom",
+                "rooms.deluxe.feature3": "Smart TV",
+                "rooms.deluxe.feature4": "High-Speed WiFi",
+                "rooms.deluxe.feature5": "AC & Heating",
+                "rooms.deluxe.feature6": "Sitting Area",
+                "rooms.deluxe.feature7": "Coffee Station",
+                "rooms.deluxe.feature8": "Work Desk",
+                "rooms.deluxe.description": "Deluxe Rooms offer enhanced space and amenities for a more comfortable stay. Featuring a separate sitting area and premium facilities, these rooms are ideal for business travelers and families.",
+                "rooms.suite.title": "Executive Suite",
+                "rooms.suite.price": "From 2,500 ETB / Night",
+                "rooms.suite.feature1": "Master Bedroom",
+                "rooms.suite.feature2": "Living Room",
+                "rooms.suite.feature3": "Luxury Bathroom",
+                "rooms.suite.feature4": "Multiple TVs",
+                "rooms.suite.feature5": "Premium WiFi",
+                "rooms.suite.feature6": "Mini Bar",
+                "rooms.suite.feature7": "Executive Desk",
+                "rooms.suite.feature8": "City View",
+                "rooms.suite.description": "Our Executive Suite offers the ultimate in luxury and space. With separate living and sleeping areas, premium amenities, and panoramic views, it's perfect for extended stays and special occasions.",
+                "rooms.features": "Room Features",
+                "rooms.inquire": "Inquire Now",
+                "services.title": "Hotel Services",
+                "services.subtitle": "Comprehensive services to make your stay comfortable and memorable",
+                "service1.title": "Restaurant & Dining",
+                "service1.description": "Enjoy traditional Ethiopian cuisine and international dishes prepared by our experienced chefs in a warm, welcoming atmosphere.",
+                "service1.hours": "7:00 AM - 10:00 PM Daily",
+                "service2.title": "24/7 Reception",
+                "service2.description": "Our reception is open round-the-clock to assist you with check-in, check-out, and any requests during your stay.",
+                "service2.hours": "24 Hours Daily",
+                "service3.title": "Secure Parking",
+                "service3.description": "Guarded parking facility available for hotel guests. CCTV surveillance and security personnel ensure vehicle safety.",
+                "service3.hours": "24 Hours Daily",
+                "service4.title": "Laundry Service",
+                "service4.description": "Professional laundry and dry cleaning services available daily. Same-day service for hotel guests.",
+                "service4.hours": "8:00 AM - 8:00 PM Daily",
+                "service5.title": "Luggage Storage",
+                "service5.description": "Secure luggage storage available for early arrivals and late departures. Free for hotel guests.",
+                "service5.hours": "24 Hours Daily",
+                "service6.title": "Tour Assistance",
+                "service6.description": "Our concierge can help arrange tours, transportation, and provide information about Gondar's attractions.",
+                "service6.hours": "7:00 AM - 9:00 PM Daily",
+                "amenities.title": "Hotel Amenities",
+                "amenities.subtitle": "Additional facilities available for all our guests",
+                "amenity1.title": "Free High-Speed WiFi",
+                "amenity1.text": "Available throughout the hotel",
+                "amenity2.title": "24/7 Security",
+                "amenity2.text": "CCTV and security personnel",
+                "amenity3.title": "Air Conditioning",
+                "amenity3.text": "All rooms and public areas",
+                "amenity4.title": "Satellite TV",
+                "amenity4.text": "Multiple international channels",
+                "amenity5.title": "Room Service",
+                "amenity5.text": "Available during restaurant hours",
+                "amenity6.title": "Wake-up Service",
+                "amenity6.text": "Available upon request",
+                "amenity7.title": "First Aid",
+                "amenity7.text": "Basic medical assistance available",
+                "amenity8.title": "Currency Exchange",
+                "amenity8.text": "Assistance with currency exchange",
+                "footer.name": "Ethiopia Hotel",
+                "footer.tagline": "Gondar's Premier Hospitality Destination",
+                "footer.quicklinks": "Quick Links",
+                "footer.home": "Home",
+                "footer.rooms": "Rooms & Services",
+                "footer.menu": "Restaurant Menu",
+                "footer.about": "About Us",
+                "footer.contact": "Contact",
+                "footer.contactus": "Contact Us",
+                "footer.address": "Gondar City Center, Gondar, Ethiopia",
+                "footer.phone": "+251 XX XXX XXXX",
+                "footer.email": "info@ethiopiahotel-gondar.com",
+                "footer.hours": "24/7 Reception & Services",
+                "footer.copyright": "Ethiopia Hotel Gondar. All Rights Reserved."
+            },
+            am: {
+                "hotel.name": "ኢትዮጵያ ሆቴል",
+                "hotel.location": "ጎንደር, ኢትዮጵያ",
+                "nav.home": "መነሻ",
+                "nav.rooms": "ክፍሎች እና አገልግሎቶች",
+                "nav.menu": "ምናሌ",
+                "nav.about": "ስለኛ",
+                "nav.contact": "አግኙን",
+                "rooms.title": "ክፍሎች እና አገልግሎቶች",
+                "rooms.subtitle": "በጥንቃቄ የተነደፉትን ክፍሎቻችንን እና የሆቴል አገልግሎቶቻችንን በመጠቀም አስተማማኝነትን እና ምቾትን ይለማመዱ",
+                "rooms.ourrooms": "ክፍሎቻችን",
+                "rooms.select": "ለእረፍትዎ የተነደፉትን አስተማማኝ መኖሪያዎቻችን ይምረጡ",
+                "rooms.tab.standard": "መደበኛ ክፍል",
+                "rooms.tab.deluxe": "ዴሉክስ ክፍል",
+                "rooms.tab.suite": "ስፒት",
+                "rooms.standard.title": "መደበኛ ክፍል",
+                "rooms.standard.price": "ከ 1,200 ብር / ሌሊት",
+                "rooms.standard.feature1": "አስተማማኝ ድርብ አልጋ",
+                "rooms.standard.feature2": "ግላዊ መታጠቢያ ቤት",
+                "rooms.standard.feature3": "ሳተላይት ቴሌቪዥን",
+                "rooms.standard.feature4": "ነፃ ዊፋይ",
+                "rooms.standard.feature5": "አየር ማቀዝቀዣ",
+                "rooms.standard.feature6": "ሻይ/ቡና መስሪያ",
+                "rooms.standard.description": "መደበኛ ክፍሎቻችን ለመልካም መኖሪያ አስፈላጊ የሆኑትን ሁሉ አገልግሎቶች ያቀርባሉ። ለግለሰብ ጉዞ ሰጪዎች ወይም ለሁለት ሰዎች የሚመቹ ሲሆን አስተማማኝነትን ሳይተዉ ዋጋ ያላቸው ናቸው።",
+                "rooms.deluxe.title": "ዴሉክስ ክፍል",
+                "rooms.deluxe.price": "ከ 1,800 ብር / ሌሊት",
+                "rooms.deluxe.feature1": "ንጉስ ልክ አልጋ",
+                "rooms.deluxe.feature2": "ዘመናዊ መታጠቢያ ቤት",
+                "rooms.deluxe.feature3": "ስማርት ቴሌቪዥን",
+                "rooms.deluxe.feature4": "ፈጣን ዊፋይ",
+                "rooms.deluxe.feature5": "ኤሲ እና ማሞቂያ",
+                "rooms.deluxe.feature6": "የመቀመጫ አካባቢ",
+                "rooms.deluxe.feature7": "ቡና ጣቢያ",
+                "rooms.deluxe.feature8": "የሥራ ጠረጴዛ",
+                "rooms.deluxe.description": "ዴሉክስ ክፍሎች የተሻለ ቦታ እና አገልግሎቶችን ለተጨማሪ አስተማማኝ መኖሪያ ያቀርባሉ። የተለየ የመቀመጫ አካባቢ እና ፕሪሚየም አገልግሎቶችን የሚያካትቱ እነዚህ ክፍሎች ለንግድ ጉዞ ሰጪዎች እና ለቤተሰቦች ተስማሚ ናቸው።",
+                "rooms.suite.title": "አስፈጻሚ ስፒት",
+                "rooms.suite.price": "ከ 2,500 ብር / ሌሊት",
+                "rooms.suite.feature1": "ዋና የመኝታ ቤት",
+                "rooms.suite.feature2": "የመቀመጫ ቤት",
+                "rooms.suite.feature3": "ልዩ መታጠቢያ ቤት",
+                "rooms.suite.feature4": "ብዙ ቴሌቪዥኖች",
+                "rooms.suite.feature5": "ፕሪሚየም ዊፋይ",
+                "rooms.suite.feature6": "ሚኒ ባር",
+                "rooms.suite.feature7": "አስፈጻሚ ጠረጴዛ",
+                "rooms.suite.feature8": "የከተማ እይታ",
+                "rooms.suite.description": "የእኛ አስፈጻሚ ስፒት በልዩነት እና ቦታ ውስጥ ያለውን ፍጹም አገልግሎት ያቀርባል። የተለያዩ የመኖሪያ እና የመቀመጫ አካባቢዎች፣ ፕሪሚየም አገልግሎቶች እና ፓኖራማ እይታዎች ያሉት ለረዥም ጊዜ መኖሪያ እና ልዩ ክትትሎች ፍጹም ነው።",
+                "rooms.features": "የክፍል ባህሪያት",
+                "rooms.inquire": "አሁን ይጠይቁ",
+                "services.title": "የሆቴል አገልግሎቶች",
+                "services.subtitle": "መኖሪያዎን አስተማማኝ እና ተገቢ ለማድረግ የሚረዱ የተሟላ አገልግሎቶች",
+                "service1.title": "ምግብ ቤት እና ምግብ",
+                "service1.description": "በልምድ ያላቸው ሣሎቻችን የተዘጋጁትን ባህላዊ የኢትዮጵያ ምግቦች እና ዓለም አቀፍ ምግቦች በሞቅ ያለ እና ተቀባይነት ያለው አካባቢ ይቀምሱ።",
+                "service1.hours": "ጠዋት 7:00 - ማታ 10:00 ዕለታዊ",
+                "service2.title": "24/7 ሬሲፕሽን",
+                "service2.description": "ሬሲፕሽናችን በሙሉ ሰዓት ተከፍቶ ለቼክ-ኢን፣ ቼክ-አውት እና በመኖሪያዎ ወቅት ለማንኛውም ጥያቄዎች ለመርዳት ዝግጁ ነው።",
+                "service2.hours": "24 ሰዓት ዕለታዊ",
+                "service3.title": "ደህንነቱ የተጠበቀ ፓርኪንግ",
+                "service3.description": "ለሆቴል እንግዶች የተጠበቀ ፓርኪንግ ተቋም ይገኛል። CCTV ክትትል እና የደህንነት ሰራተኞች የተሽከርካሪዎች ደህንነት ያረጋግጣሉ።",
+                "service3.hours": "24 ሰዓት ዕለታዊ",
+                "service4.title": "ላንድሪ አገልግሎት",
+                "service4.description": "ዕለታዊ ፕሮፌሽናል ላንድሪ እና ደረቅ ማጽጃ አገልግሎቶች ይገኛሉ። ለሆቴል እንግዶች በቀኑ ውስጥ አገልግሎት።",
+                "service4.hours": "ጠዋት 8:00 - ማታ 8:00 ዕለታዊ",
+                "service5.title": "የታሸገ ሸክላ ማከማቻ",
+                "service5.description": "ለቀድሞ የደረሱ እና ለዘግይተው ለሚሄዱ ደህንነቱ የተጠበቀ የታሸገ ሸክላ ማከማቻ ይገኛል። ለሆቴል እንግዶች ነፃ።",
+                "service5.hours": "24 ሰዓት ዕለታዊ",
+                "service6.title": "ቱሪስት እርዳታ",
+                "service6.description": "ኮንሲየርጅ የጎንደርን መስህቦች ለመጎብኘት ቱሪስት፣ ትራንስፖርት እና መረጃ ለማዘጋጀት ሊረዳዎ ይችላል።",
+                "service6.hours": "ጠዋት 7:00 - ማታ 9:00 ዕለታዊ",
+                "amenities.title": "የሆቴል አገልግሎቶች",
+                "amenities.subtitle": "ለሁሉም እንግዶቻችን የሚገኙ ተጨማሪ ተቋማት",
+                "amenity1.title": "ነፃ ፈጣን ዊፋይ",
+                "amenity1.text": "በሙሉ ሆቴሉ ውስጥ ይገኛል",
+                "amenity2.title": "24/7 ደህንነት",
+                "amenity2.text": "CCTV እና የደህንነት ሰራተኞች",
+                "amenity3.title": "አየር ማቀዝቀዣ",
+                "amenity3.text": "በሁሉም ክፍሎች እና የህዝብ አካባቢዎች",
+                "amenity4.title": "ሳተላይት ቴሌቪዥን",
+                "amenity4.text": "ብዙ ዓለም አቀፍ ጣቢያዎች",
+                "amenity5.title": "ክፍል አገልግሎት",
+                "amenity5.text": "በምግብ ቤት ሰዓታት ይገኛል",
+                "amenity6.title": "የነቅቶ አገልግሎት",
+                "amenity6.text": "በጥያቄ ይገኛል",
+                "amenity7.title": "መጀመሪያ እርዳታ",
+                "amenity7.text": "መሰረታዊ የሕክምና እርዳታ ይገኛል",
+                "amenity8.title": "ገንዘብ ልውውጥ",
+                "amenity8.text": "በገንዘብ ልውውጥ ረዳት",
+                "footer.name": "ኢትዮጵያ ሆቴል",
+                "footer.tagline": "የጎንደር ክብር ያለው የአገልግሎት መድረሻ",
+                "footer.quicklinks": "ፈጣን አገናኞች",
+                "footer.home": "መነሻ",
+                "footer.rooms": "ክፍሎች እና አገልግሎቶች",
+                "footer.menu": "የምግብ ቤት ምናሌ",
+                "footer.about": "ስለኛ",
+                "footer.contact": "አግኙን",
+                "footer.contactus": "አግኙን",
+                "footer.address": "ጎንደር ከተማ መሃል፣ ጎንደር፣ ኢትዮጵያ",
+                "footer.phone": "+251 XX XXX XXXX",
+                "footer.email": "info@ethiopiahotel-gondar.com",
+                "footer.hours": "24/7 ሬሲፕሽን እና አገልግሎቶች",
+                "footer.copyright": "ኢትዮጵያ ሆቴል ጎንደር. ሁሉም መብቶች የተጠበቁ ናቸው."
+            }
+        };
+
+        // Language Switcher
+        class LanguageSwitcher {
+            constructor() {
+                this.currentLang = localStorage.getItem('preferredLang') || 'en';
+                this.textElements = document.querySelectorAll('[data-key]');
+                this.langButtons = document.querySelectorAll('.lang-btn');
+                this.init();
+            }
+
+            init() {
+                this.updatePageText();
+                this.setupEventListeners();
+                this.updateLangToggle();
+                this.updateFontFamily();
+            }
+
+            updatePageText() {
+                this.textElements.forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    const translation = translations[this.currentLang][key];
+                    
+                    if (translation !== undefined) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.placeholder = translation;
+                        } else {
+                            element.textContent = translation;
+                        }
+                    }
+                });
+
+                document.documentElement.setAttribute('data-lang', this.currentLang);
+                document.documentElement.lang = this.currentLang;
+                this.updateFontFamily();
+            }
+
+            setupEventListeners() {
+                this.langButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const newLang = e.target.getAttribute('data-lang');
+                        if (newLang !== this.currentLang) {
+                            this.switchLanguage(newLang);
+                        }
+                    });
+                });
+            }
+
+            switchLanguage(newLang) {
+                this.currentLang = newLang;
+                localStorage.setItem('preferredLang', newLang);
+                this.updatePageText();
+                this.updateLangToggle();
+            }
+
+            updateLangToggle() {
+                this.langButtons.forEach(button => {
+                    const lang = button.getAttribute('data-lang');
+                    button.classList.toggle('active', lang === this.currentLang);
+                });
+            }
+
+            updateFontFamily() {
+                if (this.currentLang === 'am') {
+                    document.body.classList.add('amharic-font');
+                } else {
+                    document.body.classList.remove('amharic-font');
+                }
+            }
+        }
+
+        // Room Tabs Functionality
+        class RoomTabs {
+            constructor() {
+                this.tabs = document.querySelectorAll('.room-tab');
+                this.contents = document.querySelectorAll('.room-content');
+                this.init();
+            }
+
+            init() {
+                this.tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const roomType = tab.getAttribute('data-room');
+                        this.switchTab(roomType);
+                    });
+                });
+            }
+
+            switchTab(roomType) {
+                // Update active tab
+                this.tabs.forEach(tab => {
+                    tab.classList.toggle('active', tab.getAttribute('data-room') === roomType);
+                });
+
+                // Update active content
+                this.contents.forEach(content => {
+                    content.classList.toggle('active', content.id === `${roomType}-room`);
+                });
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize language switcher
+            new LanguageSwitcher();
+
+            // Initialize room tabs
+            new RoomTabs();
+
+            // Mobile menu
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.nav-container') && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                }
+            });
+
+            // Update copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Close mobile menu if open
+                            if (navMenu.classList.contains('active')) {
+                                navMenu.classList.remove('active');
+                                mobileMenuBtn.classList.remove('active');
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Scroll animations
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.padding = '10px 0';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.padding = '15px 0';
+                    header.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

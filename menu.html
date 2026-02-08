@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ethiopia Hotel Restaurant Menu - Traditional Ethiopian cuisine and international dishes in Gondar">
+    <title>Restaurant Menu | Ethiopia Hotel Gondar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #d4af37;
+            --accent: #2d3748;
+            --light: #f8f9fa;
+            --dark: #2d3436;
+            --white: #ffffff;
+            --gray: #718096;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .amharic-font {
+            font-family: 'Noto Sans Ethiopic', 'Inter', sans-serif;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--white);
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            display: flex;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .lang-btn {
+            padding: 10px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(26, 54, 93, 0.05);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hotel-name {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .location {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 15px;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 100px;
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* QR Code Banner - Optimized for Scanning */
+        .qr-banner {
+            background: linear-gradient(135deg, var(--primary), #2c5282);
+            color: var(--white);
+            padding: 30px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .qr-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .qr-code {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .qr-placeholder {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #e0e0e0, #f5f5f5);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        .qr-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .qr-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .qr-info p {
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        /* Menu Container */
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
+
+        /* Menu Navigation */
+        .menu-nav {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 100px;
+            z-index: 100;
+        }
+
+        .menu-tabs {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding-bottom: 10px;
+            scrollbar-width: thin;
+        }
+
+        .menu-tabs::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .menu-tabs::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .menu-tabs::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 10px;
+        }
+
+        .menu-tab {
+            padding: 12px 24px;
+            background: var(--light);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            color: var(--primary);
+        }
+
+        .menu-tab:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .menu-tab.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Menu Sections */
+        .menu-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .menu-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--secondary);
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .menu-category {
+            margin-bottom: 40px;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .category-title i {
+            color: var(--secondary);
+        }
+
+        /* Menu Items */
+        .menu-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 20px;
+            border-left: 4px solid transparent;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-left-color: var(--secondary);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .item-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            flex: 1;
+        }
+
+        .item-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-left: 20px;
+        }
+
+        .item-description {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .item-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .item-tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--secondary);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .item-tag.spicy {
+            background: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+        }
+
+        .item-tag.vegetarian {
+            background: rgba(5, 150, 105, 0.1);
+            color: #059669;
+        }
+
+        .item-tag.recommended {
+            background: rgba(26, 54, 93, 0.1);
+            color: var(--primary);
+        }
+
+        /* Special Offers */
+        .specials-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(26, 54, 93, 0.05));
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .specials-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .special-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .special-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .special-badge {
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        /* Restaurant Info */
+        .restaurant-info {
+            background: var(--light);
+            border-radius: var(--border-radius-lg);
+            padding: 40px;
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .info-card {
+            text-align: center;
+        }
+
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            color: var(--secondary);
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .info-card p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after, .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-lg);
+                text-align: center;
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+                z-index: 1002;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+                z-index: 1002;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+                z-index: 1003;
+            }
+
+            /* Hamburger -> X animation when active */
+            .mobile-menu-btn span {
+                display: block;
+                transform-origin: center;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: translateY(6px) rotate(45deg);
+            }
+
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+                transform: scaleX(0);
+            }
+
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: translateY(-6px) rotate(-45deg);
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-tabs {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+            }
+            
+            .qr-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .restaurant-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .menu-item {
+                padding: 20px;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .item-price {
+                margin-left: 0;
+            }
+        }
+
+        /* QR Code Optimizations */
+        @media (max-width: 400px) {
+            .qr-placeholder {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .qr-info {
+                min-width: 100%;
+            }
+        }
+
+        /* Print Styles for Menu */
+        @media print {
+            header, .lang-toggle, .qr-banner, .menu-nav, .specials-section, footer {
+                display: none !important;
+            }
+            
+            main {
+                padding-top: 0;
+            }
+            
+            .page-header {
+                padding: 20px 0;
+                background: none;
+                color: #000;
+            }
+            
+            .menu-container {
+                padding: 0;
+            }
+            
+            .menu-item {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="am">አማ</button>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="hotel-name" data-key="hotel.name">Ethiopia Hotel</span>
+                    <span class="location" data-key="hotel.location">Gondar, Ethiopia</span>
+                </div>
+            </a>
+            
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" data-key="nav.home">Home</a></li>
+                <li><a href="rooms.html" data-key="nav.rooms">Rooms & Services</a></li>
+                <li><a href="menu.html" data-key="nav.menu">Menu</a></li>
+                <li><a href="about.html" data-key="nav.about">About</a></li>
+                <li><a href="contact.html" data-key="nav.contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1 data-key="menu.title">Restaurant Menu</h1>
+            <p data-key="menu.subtitle">Traditional Ethiopian cuisine and international favorites prepared with care</p>
+        </section>
+
+        <!-- QR Code Banner -->
+        <section class="qr-banner">
+            <div class="qr-container">
+                <div class="qr-code">
+                    <div class="qr-placeholder">
+                        <i class="fas fa-qrcode" style="font-size: 48px; color: #ccc;"></i>
+                        <div style="margin-top: 10px; font-size: 12px;">SCAN ME</div>
+                    </div>
+                </div>
+                <div class="qr-info">
+                    <h3 data-key="menu.qr.title">Scan to View Menu</h3>
+                    <p data-key="menu.qr.description">Scan this QR code with your phone camera to access our digital menu anytime. Perfect for quick ordering and sharing with friends.</p>
+                    <p><small data-key="menu.qr.tip">Tip: Open your camera app and point it at the QR code</small></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Navigation -->
+        <div class="menu-nav">
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-tab="food" data-key="menu.tab.food">Food</button>
+                <button class="menu-tab" data-tab="drinks" data-key="menu.tab.drinks">Drinks</button>
+                <button class="menu-tab" data-tab="breakfast" data-key="menu.tab.breakfast">Breakfast</button>
+                <button class="menu-tab" data-tab="desserts" data-key="menu.tab.desserts">Desserts</button>
+                <button class="menu-tab" data-tab="specials" data-key="menu.tab.specials">Today's Specials</button>
+            </div>
+        </div>
+
+        <!-- Menu Container -->
+        <div class="menu-container">
+            <!-- Food Menu Section -->
+            <section class="menu-section active" id="food-menu">
+                <div class="section-header">
+                    <h2 data-key="menu.food.title">Food Menu</h2>
+                    <p data-key="menu.food.subtitle">Traditional Ethiopian dishes and international favorites</p>
+                </div>
+
+                <div class="menu-grid">
+                    <!-- Ethiopian Traditional -->
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-utensils"></i>
+                            <span data-key="menu.category.ethiopian">Ethiopian Traditional</span>
+                        </h3>
+                        
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.tibs.name">Tibs (Beef or Lamb)</h4>
+                                <div class="item-price" data-key="menu.item.tibs.price">220 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.tibs.description">Sautéed beef or lamb with onions, peppers, and traditional spices, served with injera</p>
+                            <div class="item-tags">
+                                <span class="item-tag spicy" data-key="menu.tag.spicy">Spicy</span>
+                                <span class="item-tag recommended" data-key="menu.tag.recommended">Recommended</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.dorowot.name">Doro Wot</h4>
+                                <div class="item-price" data-key="menu.item.dorowot.price">250 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.dorowot.description">Traditional Ethiopian chicken stew with hard-boiled egg, slow-cooked in berbere sauce</p>
+                            <div class="item-tags">
+                                <span class="item-tag spicy" data-key="menu.tag.spicy">Spicy</span>
+                                <span class="item-tag" data-key="menu.tag.traditional">Traditional</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.kitfo.name">Kitfo</h4>
+                                <div class="item-price" data-key="menu.item.kitfo.price">240 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.kitfo.description">Finely minced raw beef seasoned with mitmita and niter kibbeh, served with ayib and gomen</p>
+                            <div class="item-tags">
+                                <span class="item-tag spicy" data-key="menu.tag.spicy">Spicy</span>
+                                <span class="item-tag recommended" data-key="menu.tag.recommended">Recommended</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.shro.name">Shiro Wot</h4>
+                                <div class="item-price" data-key="menu.item.shro.price">180 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.shro.description">Chickpea flour stew with onions, garlic, and berbere spices, vegetarian option available</p>
+                            <div class="item-tags">
+                                <span class="item-tag vegetarian" data-key="menu.tag.vegetarian">Vegetarian</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.fast.name">Fast-Fasting Platter</h4>
+                                <div class="item-price" data-key="menu.item.fast.price">200 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.fast.description">Selection of lentil stews, cabbage, potatoes, and greens served with injera</p>
+                            <div class="item-tags">
+                                <span class="item-tag vegetarian" data-key="menu.tag.vegetarian">Vegetarian</span>
+                                <span class="item-tag" data-key="menu.tag.vegan">Vegan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- International Dishes -->
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-globe-americas"></i>
+                            <span data-key="menu.category.international">International Dishes</span>
+                        </h3>
+                        
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.grill.name">Grilled Chicken Breast</h4>
+                                <div class="item-price" data-key="menu.item.grill.price">210 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.grill.description">Marinated chicken breast with roasted vegetables and choice of sauce</p>
+                            <div class="item-tags">
+                                <span class="item-tag" data-key="menu.tag.glutenfree">Gluten Free</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.pasta.name">Spaghetti Bolognese</h4>
+                                <div class="item-price" data-key="menu.item.pasta.price">190 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.pasta.description">Italian pasta with rich meat sauce, parmesan cheese, and garlic bread</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.burger.name">Beef Burger</h4>
+                                <div class="item-price" data-key="menu.item.burger.price">180 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.burger.description">Fresh beef patty with lettuce, tomato, cheese, and fries</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.salmon.name">Grilled Salmon</h4>
+                                <div class="item-price" data-key="menu.item.salmon.price">280 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.salmon.description">Atlantic salmon fillet with lemon butter sauce and seasonal vegetables</p>
+                            <div class="item-tags">
+                                <span class="item-tag recommended" data-key="menu.tag.recommended">Recommended</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sides & Extras -->
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-plus-circle"></i>
+                            <span data-key="menu.category.sides">Sides & Extras</span>
+                        </h3>
+                        
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.injera.name">Extra Injera</h4>
+                                <div class="item-price" data-key="menu.item.injera.price">30 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.injera.description">Traditional Ethiopian flatbread made from teff flour</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.fries.name">French Fries</h4>
+                                <div class="item-price" data-key="menu.item.fries.price">60 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.fries.description">Crispy golden fries served with ketchup or mayonnaise</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.salad.name">Green Salad</h4>
+                                <div class="item-price" data-key="menu.item.salad.price">80 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.salad.description">Fresh mixed greens with tomatoes, cucumbers, and choice of dressing</p>
+                            <div class="item-tags">
+                                <span class="item-tag vegetarian" data-key="menu.tag.vegetarian">Vegetarian</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drinks Menu Section -->
+            <section class="menu-section" id="drinks-menu">
+                <div class="section-header">
+                    <h2 data-key="menu.drinks.title">Drinks Menu</h2>
+                    <p data-key="menu.drinks.subtitle">Beverages, cocktails, and traditional Ethiopian drinks</p>
+                </div>
+
+                <div class="menu-grid">
+                    <!-- Hot Drinks -->
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-mug-hot"></i>
+                            <span data-key="menu.category.hotdrinks">Hot Drinks</span>
+                        </h3>
+                        
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.coffee.name">Ethiopian Coffee</h4>
+                                <div class="item-price" data-key="menu.item.coffee.price">60 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.coffee.description">Traditional Ethiopian coffee ceremony with popcorn</p>
+                            <div class="item-tags">
+                                <span class="item-tag recommended" data-key="menu.tag.recommended">Recommended</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.tea.name">Tea Selection</h4>
+                                <div class="item-price" data-key="menu.item.tea.price">40 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.tea.description">Black, green, or herbal tea with honey or sugar</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.cappuccino.name">Cappuccino</h4>
+                                <div class="item-price" data-key="menu.item.cappuccino.price">70 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.cappuccino.description">Espresso with steamed milk and foam</p>
+                        </div>
+                    </div>
+
+                    <!-- Cold Drinks -->
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-glass-whiskey"></i>
+                            <span data-key="menu.category.colddrinks">Cold Drinks</span>
+                        </h3>
+                        
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.juice.name">Fresh Juice</h4>
+                                <div class="item-price" data-key="menu.item.juice.price">50 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.juice.description">Mango, orange, pineapple, or avocado juice</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.smoothie.name">Fruit Smoothie</h4>
+                                <div class="item-price" data-key="menu.item.smoothie.price">80 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.smoothie.description">Blended seasonal fruits with yogurt or milk</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.soft.name">Soft Drinks</h4>
+                                <div class="item-price" data-key="menu.item.soft.price">30 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.soft.description">Coca-Cola, Fanta, Sprite, or Mirinda</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.water.name">Bottled Water</h4>
+                                <div class="item-price" data-key="menu.item.water.price">25 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.water.description">Still or sparkling mineral water</p>
+                        </div>
+                    </div>
+
+                    <!-- Alcoholic Beverages -->
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-wine-glass-alt"></i>
+                            <span data-key="menu.category.alcohol">Alcoholic Beverages</span>
+                        </h3>
+                        
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.beer.name">Local Beer</h4>
+                                <div class="item-price" data-key="menu.item.beer.price">70 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.beer.description">St. George, Walia, or Dashen beer</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.wine.name">Wine by Glass</h4>
+                                <div class="item-price" data-key="menu.item.wine.price">120 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.wine.description">Red, white, or rose wine selection</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.tej.name">Tej (Honey Wine)</h4>
+                                <div class="item-price" data-key="menu.item.tej.price">90 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.tej.description">Traditional Ethiopian honey wine</p>
+                            <div class="item-tags">
+                                <span class="item-tag recommended" data-key="menu.tag.recommended">Recommended</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.cocktail.name">Signature Cocktails</h4>
+                                <div class="item-price" data-key="menu.item.cocktail.price">150 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.cocktail.description">Ask your server for today's special cocktails</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Breakfast Menu Section -->
+            <section class="menu-section" id="breakfast-menu">
+                <div class="section-header">
+                    <h2 data-key="menu.breakfast.title">Breakfast Menu</h2>
+                    <p data-key="menu.breakfast.subtitle">Served daily from 7:00 AM to 11:00 AM</p>
+                </div>
+
+                <div class="menu-grid">
+                    <!-- Ethiopian Breakfast -->
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-sun"></i>
+                            <span data-key="menu.category.ethbreakfast">Ethiopian Breakfast</span>
+                        </h3>
+                        
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.ful.name">Ful Medames</h4>
+                                <div class="item-price" data-key="menu.item.ful.price">90 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.ful.description">Cooked fava beans with olive oil, lemon, and spices, served with bread</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.chechebsa.name">Chechebsa</h4>
+                                <div class="item-price" data-key="menu.item.chechebsa.price">100 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.chechebsa.description">Kita bread with spiced butter and berbere, served with honey</p>
+                            <div class="item-tags">
+                                <span class="item-tag spicy" data-key="menu.tag.spicy">Spicy</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Continental Breakfast -->
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-bread-slice"></i>
+                            <span data-key="menu.category.continental">Continental Breakfast</span>
+                        </h3>
+                        
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.english.name">English Breakfast</h4>
+                                <div class="item-price" data-key="menu.item.english.price">150 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.english.description">Eggs, bacon, sausage, baked beans, tomatoes, mushrooms, and toast</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.pancakes.name">Pancakes</h4>
+                                <div class="item-price" data-key="menu.item.pancakes.price">120 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.pancakes.description">Fluffy pancakes with maple syrup and fresh fruits</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.omelette.name">Omelette</h4>
+                                <div class="item-price" data-key="menu.item.omelette.price">110 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.omelette.description">Three-egg omelette with cheese, mushrooms, tomatoes, and herbs</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Desserts Menu Section -->
+            <section class="menu-section" id="desserts-menu">
+                <div class="section-header">
+                    <h2 data-key="menu.desserts.title">Desserts</h2>
+                    <p data-key="menu.desserts.subtitle">Sweet endings to your meal</p>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-ice-cream"></i>
+                            <span data-key="menu.category.sweets">Sweet Treats</span>
+                        </h3>
+                        
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.baklava.name">Baklava</h4>
+                                <div class="item-price" data-key="menu.item.baklava.price">80 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.baklava.description">Layered pastry with nuts and honey syrup</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.crepe.name">Chocolate Crepe</h4>
+                                <div class="item-price" data-key="menu.item.crepe.price">90 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.crepe.description">Thin pancake with chocolate spread and strawberries</p>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.fruit.name">Fresh Fruit Platter</h4>
+                                <div class="item-price" data-key="menu.item.fruit.price">70 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.fruit.description">Seasonal fruits with yogurt dip</p>
+                            <div class="item-tags">
+                                <span class="item-tag vegetarian" data-key="menu.tag.vegetarian">Vegetarian</span>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4 class="item-name" data-key="menu.item.icecream.name">Ice Cream</h4>
+                                <div class="item-price" data-key="menu.item.icecream.price">60 ETB</div>
+                            </div>
+                            <p class="item-description" data-key="menu.item.icecream.description">Vanilla, chocolate, or strawberry ice cream</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Today's Specials Section -->
+            <section class="menu-section" id="specials-menu">
+                <div class="section-header">
+                    <h2 data-key="menu.specials.title">Today's Specials</h2>
+                    <p data-key="menu.specials.subtitle">Chef's recommendations and seasonal offerings</p>
+                </div>
+
+                <div class="specials-section">
+                    <h3 class="specials-title" data-key="menu.specials.daily">Daily Specials</h3>
+                    <p data-key="menu.specials.description">Ask your server about today's chef specials and seasonal dishes</p>
+                    
+                    <div class="specials-grid">
+                        <div class="special-item">
+                            <div class="special-badge" data-key="menu.special.badge">SPECIAL</div>
+                            <h4 data-key="menu.special1.name">Traditional Coffee Ceremony</h4>
+                            <p data-key="menu.special1.description">Experience authentic Ethiopian coffee ceremony with traditional preparation and service</p>
+                            <div class="item-price">150 ETB per person</div>
+                        </div>
+
+                        <div class="special-item">
+                            <div class="special-badge" data-key="menu.special.badge">SEASONAL</div>
+                            <h4 data-key="menu.special2.name">Fresh Catch of the Day</h4>
+                            <p data-key="menu.special2.description">Today's fresh fish selection grilled to perfection with local herbs and spices</p>
+                            <div class="item-price">Market Price</div>
+                        </div>
+
+                        <div class="special-item">
+                            <div class="special-badge" data-key="menu.special.badge">CHEF'S PICK</div>
+                            <h4 data-key="menu.special3.name">Vegetarian Platter</h4>
+                            <p data-key="menu.special3.description">Seasonal vegetables prepared with traditional Ethiopian spices and flavors</p>
+                            <div class="item-price">180 ETB</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Restaurant Information -->
+            <div class="restaurant-info">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 data-key="menu.info.hours.title">Opening Hours</h3>
+                    <p data-key="menu.info.hours.breakfast">Breakfast: 7:00 AM - 11:00 AM</p>
+                    <p data-key="menu.info.hours.lunch">Lunch: 12:00 PM - 3:00 PM</p>
+                    <p data-key="menu.info.hours.dinner">Dinner: 6:00 PM - 10:00 PM</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 data-key="menu.info.service.title">Service Options</h3>
+                    <p data-key="menu.info.service.dinein">Dine-in</p>
+                    <p data-key="menu.info.service.takeaway">Takeaway</p>
+                    <p data-key="menu.info.service.room">Room Service</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3 data-key="menu.info.notes.title">Important Notes</h3>
+                    <p data-key="menu.info.notes.tax">All prices include 15% VAT</p>
+                    <p data-key="menu.info.notes.service">10% service charge applies</p>
+                    <p data-key="menu.info.notes.allergy">Inform staff of any allergies</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3 data-key="footer.name">Ethiopia Hotel</h3>
+                <p data-key="footer.tagline">Gondar's Premier Hospitality Destination</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4 data-key="footer.quicklinks">Quick Links</h4>
+                <ul>
+                    <li><a href="index.html" data-key="footer.home">Home</a></li>
+                    <li><a href="rooms.html" data-key="footer.rooms">Rooms & Services</a></li>
+                    <li><a href="menu.html" data-key="footer.menu">Restaurant Menu</a></li>
+                    <li><a href="about.html" data-key="footer.about">About Us</a></li>
+                    <li><a href="contact.html" data-key="footer.contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4 data-key="footer.contactus">Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-key="footer.address">Gondar City Center, Gondar, Ethiopia</span></p>
+                <p><i class="fas fa-phone-alt"></i> <span data-key="footer.phone">+251 XX XXX XXXX</span></p>
+                <p><i class="fas fa-envelope"></i> <span data-key="footer.email">info@ethiopiahotel-gondar.com</span></p>
+                <p><i class="fas fa-clock"></i> <span data-key="footer.hours">24/7 Reception & Services</span></p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; <span id="current-year"></span> <span data-key="footer.copyright">Ethiopia Hotel Gondar. All Rights Reserved.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Data
+        const translations = {
+            en: {
+                "hotel.name": "Ethiopia Hotel",
+                "hotel.location": "Gondar, Ethiopia",
+                "nav.home": "Home",
+                "nav.rooms": "Rooms & Services",
+                "nav.menu": "Menu",
+                "nav.about": "About",
+                "nav.contact": "Contact",
+                "menu.title": "Restaurant Menu",
+                "menu.subtitle": "Traditional Ethiopian cuisine and international favorites prepared with care",
+                "menu.qr.title": "Scan to View Menu",
+                "menu.qr.description": "Scan this QR code with your phone camera to access our digital menu anytime. Perfect for quick ordering and sharing with friends.",
+                "menu.qr.tip": "Tip: Open your camera app and point it at the QR code",
+                "menu.tab.food": "Food",
+                "menu.tab.drinks": "Drinks",
+                "menu.tab.breakfast": "Breakfast",
+                "menu.tab.desserts": "Desserts",
+                "menu.tab.specials": "Today's Specials",
+                "menu.food.title": "Food Menu",
+                "menu.food.subtitle": "Traditional Ethiopian dishes and international favorites",
+                "menu.category.ethiopian": "Ethiopian Traditional",
+                "menu.item.tibs.name": "Tibs (Beef or Lamb)",
+                "menu.item.tibs.price": "220 ETB",
+                "menu.item.tibs.description": "Sautéed beef or lamb with onions, peppers, and traditional spices, served with injera",
+                "menu.item.dorowot.name": "Doro Wot",
+                "menu.item.dorowot.price": "250 ETB",
+                "menu.item.dorowot.description": "Traditional Ethiopian chicken stew with hard-boiled egg, slow-cooked in berbere sauce",
+                "menu.item.kitfo.name": "Kitfo",
+                "menu.item.kitfo.price": "240 ETB",
+                "menu.item.kitfo.description": "Finely minced raw beef seasoned with mitmita and niter kibbeh, served with ayib and gomen",
+                "menu.item.shro.name": "Shiro Wot",
+                "menu.item.shro.price": "180 ETB",
+                "menu.item.shro.description": "Chickpea flour stew with onions, garlic, and berbere spices, vegetarian option available",
+                "menu.item.fast.name": "Fast-Fasting Platter",
+                "menu.item.fast.price": "200 ETB",
+                "menu.item.fast.description": "Selection of lentil stews, cabbage, potatoes, and greens served with injera",
+                "menu.category.international": "International Dishes",
+                "menu.item.grill.name": "Grilled Chicken Breast",
+                "menu.item.grill.price": "210 ETB",
+                "menu.item.grill.description": "Marinated chicken breast with roasted vegetables and choice of sauce",
+                "menu.item.pasta.name": "Spaghetti Bolognese",
+                "menu.item.pasta.price": "190 ETB",
+                "menu.item.pasta.description": "Italian pasta with rich meat sauce, parmesan cheese, and garlic bread",
+                "menu.item.burger.name": "Beef Burger",
+                "menu.item.burger.price": "180 ETB",
+                "menu.item.burger.description": "Fresh beef patty with lettuce, tomato, cheese, and fries",
+                "menu.item.salmon.name": "Grilled Salmon",
+                "menu.item.salmon.price": "280 ETB",
+                "menu.item.salmon.description": "Atlantic salmon fillet with lemon butter sauce and seasonal vegetables",
+                "menu.category.sides": "Sides & Extras",
+                "menu.item.injera.name": "Extra Injera",
+                "menu.item.injera.price": "30 ETB",
+                "menu.item.injera.description": "Traditional Ethiopian flatbread made from teff flour",
+                "menu.item.fries.name": "French Fries",
+                "menu.item.fries.price": "60 ETB",
+                "menu.item.fries.description": "Crispy golden fries served with ketchup or mayonnaise",
+                "menu.item.salad.name": "Green Salad",
+                "menu.item.salad.price": "80 ETB",
+                "menu.item.salad.description": "Fresh mixed greens with tomatoes, cucumbers, and choice of dressing",
+                "menu.tag.spicy": "Spicy",
+                "menu.tag.recommended": "Recommended",
+                "menu.tag.traditional": "Traditional",
+                "menu.tag.vegetarian": "Vegetarian",
+                "menu.tag.vegan": "Vegan",
+                "menu.tag.glutenfree": "Gluten Free",
+                "menu.drinks.title": "Drinks Menu",
+                "menu.drinks.subtitle": "Beverages, cocktails, and traditional Ethiopian drinks",
+                "menu.category.hotdrinks": "Hot Drinks",
+                "menu.item.coffee.name": "Ethiopian Coffee",
+                "menu.item.coffee.price": "60 ETB",
+                "menu.item.coffee.description": "Traditional Ethiopian coffee ceremony with popcorn",
+                "menu.item.tea.name": "Tea Selection",
+                "menu.item.tea.price": "40 ETB",
+                "menu.item.tea.description": "Black, green, or herbal tea with honey or sugar",
+                "menu.item.cappuccino.name": "Cappuccino",
+                "menu.item.cappuccino.price": "70 ETB",
+                "menu.item.cappuccino.description": "Espresso with steamed milk and foam",
+                "menu.category.colddrinks": "Cold Drinks",
+                "menu.item.juice.name": "Fresh Juice",
+                "menu.item.juice.price": "50 ETB",
+                "menu.item.juice.description": "Mango, orange, pineapple, or avocado juice",
+                "menu.item.smoothie.name": "Fruit Smoothie",
+                "menu.item.smoothie.price": "80 ETB",
+                "menu.item.smoothie.description": "Blended seasonal fruits with yogurt or milk",
+                "menu.item.soft.name": "Soft Drinks",
+                "menu.item.soft.price": "30 ETB",
+                "menu.item.soft.description": "Coca-Cola, Fanta, Sprite, or Mirinda",
+                "menu.item.water.name": "Bottled Water",
+                "menu.item.water.price": "25 ETB",
+                "menu.item.water.description": "Still or sparkling mineral water",
+                "menu.category.alcohol": "Alcoholic Beverages",
+                "menu.item.beer.name": "Local Beer",
+                "menu.item.beer.price": "70 ETB",
+                "menu.item.beer.description": "St. George, Walia, or Dashen beer",
+                "menu.item.wine.name": "Wine by Glass",
+                "menu.item.wine.price": "120 ETB",
+                "menu.item.wine.description": "Red, white, or rose wine selection",
+                "menu.item.tej.name": "Tej (Honey Wine)",
+                "menu.item.tej.price": "90 ETB",
+                "menu.item.tej.description": "Traditional Ethiopian honey wine",
+                "menu.item.cocktail.name": "Signature Cocktails",
+                "menu.item.cocktail.price": "150 ETB",
+                "menu.item.cocktail.description": "Ask your server for today's special cocktails",
+                "menu.breakfast.title": "Breakfast Menu",
+                "menu.breakfast.subtitle": "Served daily from 7:00 AM to 11:00 AM",
+                "menu.category.ethbreakfast": "Ethiopian Breakfast",
+                "menu.item.ful.name": "Ful Medames",
+                "menu.item.ful.price": "90 ETB",
+                "menu.item.ful.description": "Cooked fava beans with olive oil, lemon, and spices, served with bread",
+                "menu.item.chechebsa.name": "Chechebsa",
+                "menu.item.chechebsa.price": "100 ETB",
+                "menu.item.chechebsa.description": "Kita bread with spiced butter and berbere, served with honey",
+                "menu.category.continental": "Continental Breakfast",
+                "menu.item.english.name": "English Breakfast",
+                "menu.item.english.price": "150 ETB",
+                "menu.item.english.description": "Eggs, bacon, sausage, baked beans, tomatoes, mushrooms, and toast",
+                "menu.item.pancakes.name": "Pancakes",
+                "menu.item.pancakes.price": "120 ETB",
+                "menu.item.pancakes.description": "Fluffy pancakes with maple syrup and fresh fruits",
+                "menu.item.omelette.name": "Omelette",
+                "menu.item.omelette.price": "110 ETB",
+                "menu.item.omelette.description": "Three-egg omelette with cheese, mushrooms, tomatoes, and herbs",
+                "menu.desserts.title": "Desserts",
+                "menu.desserts.subtitle": "Sweet endings to your meal",
+                "menu.category.sweets": "Sweet Treats",
+                "menu.item.baklava.name": "Baklava",
+                "menu.item.baklava.price": "80 ETB",
+                "menu.item.baklava.description": "Layered pastry with nuts and honey syrup",
+                "menu.item.crepe.name": "Chocolate Crepe",
+                "menu.item.crepe.price": "90 ETB",
+                "menu.item.crepe.description": "Thin pancake with chocolate spread and strawberries",
+                "menu.item.fruit.name": "Fresh Fruit Platter",
+                "menu.item.fruit.price": "70 ETB",
+                "menu.item.fruit.description": "Seasonal fruits with yogurt dip",
+                "menu.item.icecream.name": "Ice Cream",
+                "menu.item.icecream.price": "60 ETB",
+                "menu.item.icecream.description": "Vanilla, chocolate, or strawberry ice cream",
+                "menu.specials.title": "Today's Specials",
+                "menu.specials.subtitle": "Chef's recommendations and seasonal offerings",
+                "menu.specials.daily": "Daily Specials",
+                "menu.specials.description": "Ask your server about today's chef specials and seasonal dishes",
+                "menu.special.badge": "SPECIAL",
+                "menu.special1.name": "Traditional Coffee Ceremony",
+                "menu.special1.description": "Experience authentic Ethiopian coffee ceremony with traditional preparation and service",
+                "menu.special2.name": "Fresh Catch of the Day",
+                "menu.special2.description": "Today's fresh fish selection grilled to perfection with local herbs and spices",
+                "menu.special3.name": "Vegetarian Platter",
+                "menu.special3.description": "Seasonal vegetables prepared with traditional Ethiopian spices and flavors",
+                "menu.info.hours.title": "Opening Hours",
+                "menu.info.hours.breakfast": "Breakfast: 7:00 AM - 11:00 AM",
+                "menu.info.hours.lunch": "Lunch: 12:00 PM - 3:00 PM",
+                "menu.info.hours.dinner": "Dinner: 6:00 PM - 10:00 PM",
+                "menu.info.service.title": "Service Options",
+                "menu.info.service.dinein": "Dine-in",
+                "menu.info.service.takeaway": "Takeaway",
+                "menu.info.service.room": "Room Service",
+                "menu.info.notes.title": "Important Notes",
+                "menu.info.notes.tax": "All prices include 15% VAT",
+                "menu.info.notes.service": "10% service charge applies",
+                "menu.info.notes.allergy": "Inform staff of any allergies",
+                "footer.name": "Ethiopia Hotel",
+                "footer.tagline": "Gondar's Premier Hospitality Destination",
+                "footer.quicklinks": "Quick Links",
+                "footer.home": "Home",
+                "footer.rooms": "Rooms & Services",
+                "footer.menu": "Restaurant Menu",
+                "footer.about": "About Us",
+                "footer.contact": "Contact",
+                "footer.contactus": "Contact Us",
+                "footer.address": "Gondar City Center, Gondar, Ethiopia",
+                "footer.phone": "+251 XX XXX XXXX",
+                "footer.email": "info@ethiopiahotel-gondar.com",
+                "footer.hours": "24/7 Reception & Services",
+                "footer.copyright": "Ethiopia Hotel Gondar. All Rights Reserved."
+            },
+            am: {
+                "hotel.name": "ኢትዮጵያ ሆቴል",
+                "hotel.location": "ጎንደር, ኢትዮጵያ",
+                "nav.home": "መነሻ",
+                "nav.rooms": "ክፍሎች እና አገልግሎቶች",
+                "nav.menu": "ምናሌ",
+                "nav.about": "ስለኛ",
+                "nav.contact": "አግኙን",
+                "menu.title": "የምግብ ቤት ምናሌ",
+                "menu.subtitle": "ባህላዊ የኢትዮጵያ ምግቦች እና ዓለም አቀፍ የሚወዱት በጥንቃቄ የተዘጋጁ",
+                "menu.qr.title": "ምናሌውን ለማየት ይቃኙ",
+                "menu.qr.description": "ይህንን QR ኮድ በስልክዎ ካሜራ በመቃኝ የእኛን ዲጂታል ምናሌ በማንኛውም ጊዜ መድረስ ይችላሉ። ለፈጣን ትዕዛዝ እና ከጓደኞች ጋር ለማጋራት ፍጹም።",
+                "menu.qr.tip": "ምክር፡ የካሜራ መተግበሪያዎን ክፈት እና በ QR ኮድ ላይ ያዙሩት",
+                "menu.tab.food": "ምግብ",
+                "menu.tab.drinks": "መጠጦች",
+                "menu.tab.breakfast": "እራት",
+                "menu.tab.desserts": "ምርጥ ምግቦች",
+                "menu.tab.specials": "የዛሬ ልዩ ምግቦች",
+                "menu.food.title": "የምግብ ምናሌ",
+                "menu.food.subtitle": "ባህላዊ የኢትዮጵያ ምግቦች እና ዓለም አቀፍ የሚወዱት",
+                "menu.category.ethiopian": "ባህላዊ ኢትዮጵያዊ",
+                "menu.item.tibs.name": "ጥብስ (የበግ ወይም የላም)",
+                "menu.item.tibs.price": "220 ብር",
+                "menu.item.tibs.description": "የበግ ወይም የላም ሥጋ ከሽንኩርት፣ በርበሬ እና ባህላዊ ቅመሞች ጋር የተቆላለፈ፣ ከእንጀራ ጋር የሚውል",
+                "menu.item.dorowot.name": "ዶሮ ወጥ",
+                "menu.item.dorowot.price": "250 ብር",
+                "menu.item.dorowot.description": "ባህላዊ የኢትዮጵያ ዶሮ ምስጥ ከበሰለ እንቁላል፣ በበርበሬ ስስ የተዘጋጀ",
+                "menu.item.kitfo.name": "ክትፎ",
+                "menu.item.kitfo.price": "240 ብር",
+                "menu.item.kitfo.description": "በሚትሚታ እና በንጥር ክብህ የተቀመጠ የበተነ የላም ሥጋ፣ ከአይብ እና ጎመን ጋር የሚውል",
+                "menu.item.shro.name": "ሽሮ ወጥ",
+                "menu.item.shro.price": "180 ብር",
+                "menu.item.shro.description": "የሽምብራ ዱቄት ምስጥ ከሽንኩርት፣ ነጭ ሽንኩርት እና በርበሬ ቅመሞች ጋር፣ የነችነት ምርጫ ይገኛል",
+                "menu.item.fast.name": "ጾም ሳህን",
+                "menu.item.fast.price": "200 ብር",
+                "menu.item.fast.description": "የምስር ምስጥ፣ ጎመን፣ ድንች እና አትክልቶች ምርጫ ከእንጀራ ጋር የሚውል",
+                "menu.category.international": "ዓለም አቀፍ ምግቦች",
+                "menu.item.grill.name": "የተጠበሰ ዶሮ ክልል",
+                "menu.item.grill.price": "210 ብር",
+                "menu.item.grill.description": "የተቀመጠ ዶሮ ክልል ከተጠበሱ አትክልቶች እና ከሶስ ምርጫ ጋር",
+                "menu.item.pasta.name": "ስፓጌቲ ቦሎኔዝ",
+                "menu.item.pasta.price": "190 ብር",
+                "menu.item.pasta.description": "የጣሊያን ፓስታ ከሀብታም የሥጋ ስስ፣ ፓርሜሳን አስይ እና የነጭ ሽንኩርት ዳቦ ጋር",
+                "menu.item.burger.name": "የላም በርገር",
+                "menu.item.burger.price": "180 ብር",
+                "menu.item.burger.description": "ትኩስ የላም ፓቲ ከሌቱስ፣ ቲማቲም፣ አስይ እና ፍራይ ጋር",
+                "menu.item.salmon.name": "የተጠበሰ ሳልሞን",
+                "menu.item.salmon.price": "280 ብር",
+                "menu.item.salmon.description": "አትላንቲክ ሳልሞን ፊለት ከሎሚ በትር ስስ እና ከምድጃ አትክልቶች ጋር",
+                "menu.category.sides": "ተጨማሪዎች",
+                "menu.item.injera.name": "ተጨማሪ እንጀራ",
+                "menu.item.injera.price": "30 ብር",
+                "menu.item.injera.description": "ባህላዊ የኢትዮጵያ የተፈተ ዳቦ ከጤፍ ዱቄት የተሰራ",
+                "menu.item.fries.name": "ፍራይ",
+                "menu.item.fries.price": "60 ብር",
+                "menu.item.fries.description": "ክሪስፒ ወርቃማ ፍራይ ከኬችአፕ ወይም ማዮኔዝ ጋር የሚውል",
+                "menu.item.salad.name": "አረንጓዴ ሰላጣ",
+                "menu.item.salad.price": "80 ብር",
+                "menu.item.salad.description": "ትኩስ የተቀላቀሉ አረንጓዴዎች ከቲማቲም፣ ከዝግጅት እና ከሰላጣ ምርጫ ጋር",
+                "menu.tag.spicy": "ሚዛኝ",
+                "menu.tag.recommended": "የሚመከር",
+                "menu.tag.traditional": "ባህላዊ",
+                "menu.tag.vegetarian": "ነችነት",
+                "menu.tag.vegan": "ቬጋን",
+                "menu.tag.glutenfree": "ግሉተን ነፃ",
+                "menu.drinks.title": "የመጠጥ ምናሌ",
+                "menu.drinks.subtitle": "መጠጦች፣ ኮክቴይሎች እና ባህላዊ የኢትዮጵያ መጠጦች",
+                "menu.category.hotdrinks": "ሞቃታማ መጠጦች",
+                "menu.item.coffee.name": "የኢትዮጵያ ቡና",
+                "menu.item.coffee.price": "60 ብር",
+                "menu.item.coffee.description": "ባህላዊ የኢትዮጵያ ቡና ሥነ ሥርዓት ከፎፎሮ ጋር",
+                "menu.item.tea.name": "ሻይ ምርጫ",
+                "menu.item.tea.price": "40 ብር",
+                "menu.item.tea.description": "ጥቁር፣ አረንጓዴ ወይም አትክልት ሻይ ከማር ወይም ስኳር ጋር",
+                "menu.item.cappuccino.name": "ካፑቺኖ",
+                "menu.item.cappuccino.price": "70 ብር",
+                "menu.item.cappuccino.description": "ኤስፕሬሶ ከተቀቀለ ገብስ እና ከፎም ጋር",
+                "menu.category.colddrinks": "ቀዝቃዛ መጠጦች",
+                "menu.item.juice.name": "ትኩስ ጭማቂ",
+                "menu.item.juice.price": "50 ብር",
+                "menu.item.juice.description": "ማንጎ፣ ብርቱካን፣ አናናስ ወይም አቮካዶ ጭማቂ",
+                "menu.item.smoothie.name": "ፍራፍሬ ስሙዝ",
+                "menu.item.smoothie.price": "80 ብር",
+                "menu.item.smoothie.description": "የተቀላቀሉ የምድጃ ፍራፍሬዎች ከዮገርት ወይም ገብስ ጋር",
+                "menu.item.soft.name": "ሶፍት መጠጦች",
+                "menu.item.soft.price": "30 ብር",
+                "menu.item.soft.description": "ኮካ-ኮላ፣ ፋንታ፣ ስፕራይት ወይም ሚሪንዳ",
+                "menu.item.water.name": "በልባጭ ውሃ",
+                "menu.item.water.price": "25 ብር",
+                "menu.item.water.description": "ስቲል ወይም ስፓርክሊንግ ሚነራል ውሃ",
+                "menu.category.alcohol": "የአልኮል መጠጦች",
+                "menu.item.beer.name": "አገር ውስጥ ቢራ",
+                "menu.item.beer.price": "70 ብር",
+                "menu.item.beer.description": "ሰዓተ ጊዮርጊስ፣ ዋሊያ ወይም ዳሽን ቢራ",
+                "menu.item.wine.name": "ወይን በጥርስ",
+                "menu.item.wine.price": "120 ብር",
+                "menu.item.wine.description": "ቀይ፣ ነጭ ወይም ሮዝ ወይን ምርጫ",
+                "menu.item.tej.name": "ጠጅ (የማር ወይን)",
+                "menu.item.tej.price": "90 ብር",
+                "menu.item.tej.description": "ባህላዊ የኢትዮጵያ የማር ወይን",
+                "menu.item.cocktail.name": "ልዩ ኮክቴይሎች",
+                "menu.item.cocktail.price": "150 ብር",
+                "menu.item.cocktail.description": "ስለዛሬው ልዩ ኮክቴይሎች ከአገልጋይዎ ይጠይቁ",
+                "menu.breakfast.title": "የእራት ምናሌ",
+                "menu.breakfast.subtitle": "በዕለት ከጠዋት 7:00 እስከ 11:00 ድረስ ይዘጋጃል",
+                "menu.category.ethbreakfast": "ኢትዮጵያዊ እራት",
+                "menu.item.ful.name": "ፉል መዳሜስ",
+                "menu.item.ful.price": "90 ብር",
+                "menu.item.ful.description": "የተቀቀሉ ፍባ ከወይራ ዘይት፣ ሎሚ እና ቅመሞች ጋር፣ ከዳቦ ጋር የሚውል",
+                "menu.item.chechebsa.name": "ቸቸብሳ",
+                "menu.item.chechebsa.price": "100 ብር",
+                "menu.item.chechebsa.description": "ክታ ዳቦ ከተቀቀለ በትር እና በርበሬ ጋር፣ ከማር ጋር የሚውል",
+                "menu.category.continental": "ኮንቲኔንታል እራት",
+                "menu.item.english.name": "እንግሊዝኛ እራት",
+                "menu.item.english.price": "150 ብር",
+                "menu.item.english.description": "እንቁላል፣ ቤይኮን፣ ሳስጂ፣ በሰለ ባቄላ፣ ቲማቲም፣ እሸት እና ቶስት",
+                "menu.item.pancakes.name": "ፓንኬክስ",
+                "menu.item.pancakes.price": "120 ብር",
+                "menu.item.pancakes.description": "ለስላሳ ፓንኬክስ ከማፕል ሲራፕ እና ከትኩስ ፍራፍሬዎች ጋር",
+                "menu.item.omelette.name": "ኦምሌት",
+                "menu.item.omelette.price": "110 ብር",
+                "menu.item.omelette.description": "ሶስት እንቁላል ኦምሌት ከአስይ፣ እሸት፣ ቲማቲም እና አትክልት ጋር",
+                "menu.desserts.title": "ምርጥ ምግቦች",
+                "menu.desserts.subtitle": "ለምግብዎ ጣፋጭ መጨረሻዎች",
+                "menu.category.sweets": "ጣፋጭ ስኬቶች",
+                "menu.item.baklava.name": "ባቅላቫ",
+                "menu.item.baklava.price": "80 ብር",
+                "menu.item.baklava.description": "ከፈራፍሬዎች እና ከማር ሲራፕ ጋር የተሰራ የተቀቀለ ፓስትሪ",
+                "menu.item.crepe.name": "ሾኮላት ክሬፕ",
+                "menu.item.crepe.price": "90 ብር",
+                "menu.item.crepe.description": "ቀጭን ፓንኬክ ከሾኮላት ስፔሪድ እና ከስትሮቤሪ ጋር",
+                "menu.item.fruit.name": "ትኩስ ፍራፍሬ ሳህን",
+                "menu.item.fruit.price": "70 ብር",
+                "menu.item.fruit.description": "የምድጃ ፍራፍሬዎች ከዮገርት ዲፕ ጋር",
+                "menu.item.icecream.name": "አይስ ክሬም",
+                "menu.item.icecream.price": "60 ብር",
+                "menu.item.icecream.description": "ቫኒላ፣ ሾኮላት ወይም ስትሮቤሪ አይስ ክሬም",
+                "menu.specials.title": "የዛሬ ልዩ ምግቦች",
+                "menu.specials.subtitle": "የሣሉ ምክሮች እና የምድጃ ቀርቦች",
+                "menu.specials.daily": "ዕለታዊ ልዩ ምግቦች",
+                "menu.specials.description": "ስለዛሬው የሣሉ ልዩ ምግቦች እና የምድጃ ምግቦች ከአገልጋይዎ ይጠይቁ",
+                "menu.special.badge": "ልዩ",
+                "menu.special1.name": "ባህላዊ ቡና ሥነ ሥርዓት",
+                "menu.special1.description": "እውነተኛ የኢትዮጵያ ቡና ሥነ ሥርዓትን በባህላዊ አሰጣጥ እና አገልግሎት ይለማመዱ",
+                "menu.special2.name": "የዛሬው ትኩስ ዓሣ",
+                "menu.special2.description": "የዛሬው ትኩስ ዓሣ ምርጫ በአገር ውስጥ አትክልቶች እና ቅመሞች ጋር በጥራት የተጠበሰ",
+                "menu.special3.name": "ነችነት ሳህን",
+                "menu.special3.description": "የምድጃ አትክልቶች በባህላዊ የኢትዮጵያ ቅመሞች እና ጣዕሞች የተዘጋጁ",
+                "menu.info.hours.title": "የሚከፈትበት ሰዓት",
+                "menu.info.hours.breakfast": "እራት: ጠዋት 7:00 - 11:00",
+                "menu.info.hours.lunch": "ምሳ: ቀን 12:00 - 3:00",
+                "menu.info.hours.dinner": "ምሽት: ማታ 6:00 - 10:00",
+                "menu.info.service.title": "የአገልግሎት ምርጫዎች",
+                "menu.info.service.dinein": "በቦታው መብላት",
+                "menu.info.service.takeaway": "ይዘው መሄድ",
+                "menu.info.service.room": "ክፍል አገልግሎት",
+                "menu.info.notes.title": "አስፈላጊ ማስታወሻዎች",
+                "menu.info.notes.tax": "ሁሉም ዋጋዎች 15% ቫት ያካትታሉ",
+                "menu.info.notes.service": "10% የአገልግሎት ክፍያ ይተገበራል",
+                "menu.info.notes.allergy": "ስለማንኛውም አለርጂ ለሰራተኞች ያሳውቁ",
+                "footer.name": "ኢትዮጵያ ሆቴል",
+                "footer.tagline": "የጎንደር ክብር ያለው የአገልግሎት መድረሻ",
+                "footer.quicklinks": "ፈጣን አገናኞች",
+                "footer.home": "መነሻ",
+                "footer.rooms": "ክፍሎች እና አገልግሎቶች",
+                "footer.menu": "የምግብ ቤት ምናሌ",
+                "footer.about": "ስለኛ",
+                "footer.contact": "አግኙን",
+                "footer.contactus": "አግኙን",
+                "footer.address": "ጎንደር ከተማ መሃል፣ ጎንደር፣ ኢትዮጵያ",
+                "footer.phone": "+251 XX XXX XXXX",
+                "footer.email": "info@ethiopiahotel-gondar.com",
+                "footer.hours": "24/7 ሬሲፕሽን እና አገልግሎቶች",
+                "footer.copyright": "ኢትዮጵያ ሆቴል ጎንደር. ሁሉም መብቶች የተጠበቁ ናቸው."
+            }
+        };
+
+        // Language Switcher
+        class LanguageSwitcher {
+            constructor() {
+                this.currentLang = localStorage.getItem('preferredLang') || 'en';
+                this.textElements = document.querySelectorAll('[data-key]');
+                this.langButtons = document.querySelectorAll('.lang-btn');
+                this.init();
+            }
+
+            init() {
+                this.updatePageText();
+                this.setupEventListeners();
+                this.updateLangToggle();
+                this.updateFontFamily();
+            }
+
+            updatePageText() {
+                this.textElements.forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    const translation = translations[this.currentLang][key];
+                    
+                    if (translation !== undefined) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.placeholder = translation;
+                        } else {
+                            element.textContent = translation;
+                        }
+                    }
+                });
+
+                document.documentElement.setAttribute('data-lang', this.currentLang);
+                document.documentElement.lang = this.currentLang;
+                this.updateFontFamily();
+            }
+
+            setupEventListeners() {
+                this.langButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const newLang = e.target.getAttribute('data-lang');
+                        if (newLang !== this.currentLang) {
+                            this.switchLanguage(newLang);
+                        }
+                    });
+                });
+            }
+
+            switchLanguage(newLang) {
+                this.currentLang = newLang;
+                localStorage.setItem('preferredLang', newLang);
+                this.updatePageText();
+                this.updateLangToggle();
+            }
+
+            updateLangToggle() {
+                this.langButtons.forEach(button => {
+                    const lang = button.getAttribute('data-lang');
+                    button.classList.toggle('active', lang === this.currentLang);
+                });
+            }
+
+            updateFontFamily() {
+                if (this.currentLang === 'am') {
+                    document.body.classList.add('amharic-font');
+                } else {
+                    document.body.classList.remove('amharic-font');
+                }
+            }
+        }
+
+        // Menu Tabs Functionality
+        class MenuTabs {
+            constructor() {
+                this.tabs = document.querySelectorAll('.menu-tab');
+                this.sections = document.querySelectorAll('.menu-section');
+                this.init();
+            }
+
+            init() {
+                this.tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        const tabId = tab.getAttribute('data-tab');
+                        this.switchTab(tabId);
+                    });
+                });
+            }
+
+            switchTab(tabId) {
+                // Update active tab
+                this.tabs.forEach(tab => {
+                    tab.classList.toggle('active', tab.getAttribute('data-tab') === tabId);
+                });
+
+                // Update active section
+                this.sections.forEach(section => {
+                    section.classList.toggle('active', section.id === `${tabId}-menu`);
+                });
+
+                // Scroll to top of menu section
+                const menuContainer = document.querySelector('.menu-container');
+                if (menuContainer) {
+                    menuContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize language switcher
+            new LanguageSwitcher();
+
+            // Initialize menu tabs
+            new MenuTabs();
+
+            // Mobile menu
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.nav-container') && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                }
+            });
+
+            // Update copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Close mobile menu if open
+                            if (navMenu.classList.contains('active')) {
+                                navMenu.classList.remove('active');
+                                mobileMenuBtn.classList.remove('active');
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.padding = '10px 0';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.padding = '15px 0';
+                    header.style.boxShadow = 'none';
+                }
+            });
+
+            // Print menu functionality
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print"></i> Print Menu';
+            printButton.style.position = 'fixed';
+            printButton.style.bottom = '20px';
+            printButton.style.right = '20px';
+            printButton.style.padding = '12px 24px';
+            printButton.style.background = 'var(--primary)';
+            printButton.style.color = 'white';
+            printButton.style.border = 'none';
+            printButton.style.borderRadius = 'var(--border-radius)';
+            printButton.style.cursor = 'pointer';
+            printButton.style.zIndex = '1000';
+            printButton.style.boxShadow = 'var(--shadow)';
+            printButton.style.display = 'flex';
+            printButton.style.alignItems = 'center';
+            printButton.style.gap = '8px';
+            printButton.style.fontWeight = '600';
+            printButton.addEventListener('click', function() {
+                window.print();
+            });
+            document.body.appendChild(printButton);
+
+            // Add print styles for the button
+            const style = document.createElement('style');
+            style.textContent = '@media print { button { display: none !important; } }';
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

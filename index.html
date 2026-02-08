@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ethiopia Hotel Gondar - Experience luxury hospitality in the historic city of Gondar. Comfortable rooms, excellent dining, and authentic Ethiopian hospitality.">
+    <title>Ethiopia Hotel | Gondar's Premier Hospitality</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #d4af37;
+            --accent: #2d3748;
+            --light: #f8f9fa;
+            --dark: #2d3436;
+            --white: #ffffff;
+            --gray: #718096;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .amharic-font {
+            font-family: 'Noto Sans Ethiopic', 'Inter', sans-serif;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--white);
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            display: flex;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .lang-btn {
+            padding: 10px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(26, 54, 93, 0.05);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hotel-name {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .location {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 15px;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 700px;
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 600px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #e6c230;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Highlights Section */
+        .highlights {
+            padding: 100px 20px;
+            background: var(--light);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .highlights-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .highlight-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .highlight-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 28px;
+            color: var(--secondary);
+        }
+
+        .highlight-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .highlight-card p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* About Preview */
+        .about-preview {
+            padding: 100px 20px;
+            background: var(--white);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Services Preview */
+        .services-preview {
+            padding: 100px 20px;
+            background: var(--light);
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after, .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: 2;
+            }
+            
+            .about-content {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-lg);
+                text-align: center;
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .about-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="am">አማ</button>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="hotel-name" data-key="hotel.name">Ethiopia Hotel</span>
+                    <span class="location" data-key="hotel.location">Gondar, Ethiopia</span>
+                </div>
+            </a>
+            
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" data-key="nav.home">Home</a></li>
+                <li><a href="rooms.html" data-key="nav.rooms">Rooms & Services</a></li>
+                <li><a href="menu.html" data-key="nav.menu">Menu</a></li>
+                <li><a href="about.html" data-key="nav.about">About</a></li>
+                <li><a href="contact.html" data-key="nav.contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 data-key="hero.title">Experience Luxury Hospitality in Historic Gondar</h1>
+            <p class="hero-subtitle" data-key="hero.subtitle">Where traditional Ethiopian warmth meets modern comfort and elegance. Your perfect stay in the heart of Ethiopia's cultural heritage.</p>
+            <div class="cta-buttons">
+                <a href="#rooms" class="btn btn-primary" data-key="hero.cta.rooms">
+                    <i class="fas fa-bed"></i>
+                    <span>View Our Rooms</span>
+                </a>
+                <a href="menu.html" class="btn btn-secondary" data-key="hero.cta.menu">
+                    <i class="fas fa-utensils"></i>
+                    <span>View Our Menu</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights">
+        <div class="section-title">
+            <h2 data-key="highlights.title">Why Choose Ethiopia Hotel</h2>
+            <p data-key="highlights.subtitle">Discover what makes us the preferred choice for travelers in Gondar</p>
+        </div>
+        
+        <div class="highlights-grid">
+            <div class="highlight-card fade-in">
+                <div class="highlight-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3 data-key="highlight1.title">Prime Location</h3>
+                <p data-key="highlight1.text">Centrally located in Gondar, just minutes from Fasil Ghebbi, Royal Enclosure, and other UNESCO World Heritage sites. Perfect for exploring the city's rich history.</p>
+            </div>
+            
+            <div class="highlight-card fade-in">
+                <div class="highlight-icon">
+                    <i class="fas fa-concierge-bell"></i>
+                </div>
+                <h3 data-key="highlight2.title">Authentic Hospitality</h3>
+                <p data-key="highlight2.text">Experience genuine Ethiopian hospitality with a legacy of serving guests for decades. Our staff is dedicated to making your stay memorable and comfortable.</p>
+            </div>
+            
+            <div class="highlight-card fade-in">
+                <div class="highlight-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3 data-key="highlight3.title">Exquisite Dining</h3>
+                <p data-key="highlight3.text">Savor traditional Ethiopian cuisine and international dishes at our restaurant. Fresh ingredients, authentic flavors, and warm ambiance await you.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="about-preview" id="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Ethiopia Hotel Lobby">
+            </div>
+            
+            <div class="about-content">
+                <h2 data-key="about.title">A Legacy of Hospitality Since 1985</h2>
+                <p data-key="about.text1">Ethiopia Hotel has been a landmark of comfort and hospitality in Gondar for over three decades. Founded with a vision to provide travelers with authentic Ethiopian warmth combined with modern amenities, we have hosted guests from around the world.</p>
+                <p data-key="about.text2">Our hotel combines traditional Ethiopian architecture with contemporary design, creating a unique atmosphere that reflects both our heritage and commitment to modern comfort. Each space is thoughtfully designed to ensure your stay is both memorable and relaxing.</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">35+</span>
+                        <span class="stat-label" data-key="about.stat1">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label" data-key="about.stat2">Rooms & Suites</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label" data-key="about.stat3">Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview" id="services">
+        <div class="section-title">
+            <h2 data-key="services.title">Our Hotel Services</h2>
+            <p data-key="services.subtitle">Everything you need for a comfortable and convenient stay</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-wifi service-icon"></i>
+                <h3 data-key="service1.title">High-Speed WiFi</h3>
+                <p data-key="service1.text">Free high-speed internet throughout the hotel</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-utensils service-icon"></i>
+                <h3 data-key="service2.title">Restaurant & Bar</h3>
+                <p data-key="service2.text">Traditional Ethiopian and international cuisine</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-car service-icon"></i>
+                <h3 data-key="service3.title">Secure Parking</h3>
+                <p data-key="service3.text">24/7 guarded parking facility</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-concierge-bell service-icon"></i>
+                <h3 data-key="service4.title">24/7 Reception</h3>
+                <p data-key="service4.text">Round-the-clock concierge service</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-tshirt service-icon"></i>
+                <h3 data-key="service5.title">Laundry Service</h3>
+                <p data-key="service5.text">Daily laundry and dry cleaning</p>
+            </div>
+            
+            <div class="service-card">
+                <i class="fas fa-shield-alt service-icon"></i>
+                <h3 data-key="service6.title">Security</h3>
+                <p data-key="service6.text">CCTV surveillance and security personnel</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3 data-key="footer.name">Ethiopia Hotel</h3>
+                <p data-key="footer.tagline">Gondar's Premier Hospitality Destination</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4 data-key="footer.quicklinks">Quick Links</h4>
+                <ul>
+                     <li><a href="index.html" data-key="footer.home">Home</a></li>
+                    <li><a href="rooms.html" data-key="footer.rooms">Rooms & Services</a></li>
+                    <li><a href="menu.html" data-key="footer.menu">Restaurant Menu</a></li>
+                    <li><a href="about.html" data-key="footer.about">About Us</a></li>
+                    <li><a href="contact.html" data-key="footer.contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4 data-key="footer.contactus">Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-key="footer.address">Gondar City Center, Gondar, Ethiopia</span></p>
+                <p><i class="fas fa-phone-alt"></i> <span data-key="footer.phone">+251 XX XXX XXXX</span></p>
+                <p><i class="fas fa-envelope"></i> <span data-key="footer.email">info@ethiopiahotel-gondar.com</span></p>
+                <p><i class="fas fa-clock"></i> <span data-key="footer.hours">24/7 Reception & Services</span></p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; <span id="current-year"></span> <span data-key="footer.copyright">Ethiopia Hotel Gondar. All Rights Reserved.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Data
+        const translations = {
+            en: {
+                "hotel.name": "Ethiopia Hotel",
+                "hotel.location": "Gondar, Ethiopia",
+                "nav.home": "Home",
+                "nav.rooms": "Rooms & Services",
+                "nav.services": "Services",
+                "nav.about": "About",
+                "nav.contact": "Contact",
+                "hero.title": "Experience Luxury Hospitality in Historic Gondar",
+                "hero.subtitle": "Where traditional Ethiopian warmth meets modern comfort and elegance. Your perfect stay in the heart of Ethiopia's cultural heritage.",
+                "hero.cta.rooms": "View Our Rooms",
+                "hero.cta.contact": "Contact Us",
+                "highlights.title": "Why Choose Ethiopia Hotel",
+                "highlights.subtitle": "Discover what makes us the preferred choice for travelers in Gondar",
+                "highlight1.title": "Prime Location",
+                "highlight1.text": "Centrally located in Gondar, just minutes from Fasil Ghebbi, Royal Enclosure, and other UNESCO World Heritage sites. Perfect for exploring the city's rich history.",
+                "highlight2.title": "Authentic Hospitality",
+                "highlight2.text": "Experience genuine Ethiopian hospitality with a legacy of serving guests for decades. Our staff is dedicated to making your stay memorable and comfortable.",
+                "highlight3.title": "Exquisite Dining",
+                "highlight3.text": "Savor traditional Ethiopian cuisine and international dishes at our restaurant. Fresh ingredients, authentic flavors, and warm ambiance await you.",
+                "about.title": "A Legacy of Hospitality Since 1985",
+                "about.text1": "Ethiopia Hotel has been a landmark of comfort and hospitality in Gondar for over three decades. Founded with a vision to provide travelers with authentic Ethiopian warmth combined with modern amenities, we have hosted guests from around the world.",
+                "about.text2": "Our hotel combines traditional Ethiopian architecture with contemporary design, creating a unique atmosphere that reflects both our heritage and commitment to modern comfort. Each space is thoughtfully designed to ensure your stay is both memorable and relaxing.",
+                "about.stat1": "Years Experience",
+                "about.stat2": "Rooms & Suites",
+                "about.stat3": "Service",
+                "services.title": "Our Hotel Services",
+                "services.subtitle": "Everything you need for a comfortable and convenient stay",
+                "service1.title": "High-Speed WiFi",
+                "service1.text": "Free high-speed internet throughout the hotel",
+                "service2.title": "Restaurant & Bar",
+                "service2.text": "Traditional Ethiopian and international cuisine",
+                "service3.title": "Secure Parking",
+                "service3.text": "24/7 guarded parking facility",
+                "service4.title": "24/7 Reception",
+                "service4.text": "Round-the-clock concierge service",
+                "service5.title": "Laundry Service",
+                "service5.text": "Daily laundry and dry cleaning",
+                "service6.title": "Security",
+                "service6.text": "CCTV surveillance and security personnel",
+                "footer.name": "Ethiopia Hotel",
+                "footer.tagline": "Gondar's Premier Hospitality Destination",
+                "footer.quicklinks": "Quick Links",
+                "footer.home": "Home",
+                "footer.rooms": "Rooms & Suites",
+                "footer.services": "Services",
+                "footer.about": "About Us",
+                "footer.contact": "Contact",
+                "footer.contactus": "Contact Us",
+                "footer.address": "Gondar City Center, Gondar, Ethiopia",
+                "footer.phone": "+251 XX XXX XXXX",
+                "footer.email": "info@ethiopiahotel-gondar.com",
+                "footer.hours": "24/7 Reception & Services",
+                "footer.copyright": "Ethiopia Hotel Gondar. All Rights Reserved."
+            },
+            am: {
+                "hotel.name": "ኢትዮጵያ ሆቴል",
+                "hotel.location": "ጎንደር, ኢትዮጵያ",
+                "nav.home": "መነሻ",
+                "nav.rooms": "ክፍሎች",
+                "nav.services": "አገልግሎቶች",
+                "nav.about": "ስለኛ",
+                "nav.contact": "አግኙን",
+                "hero.title": "በታሪካዊ ጎንደር ውስጥ የክብር አገልግሎትን ይለማመዱ",
+                "hero.subtitle": "አለባበስ በሚገባ የኢትዮጵያ ሞቅ ያለ አገልግሎት ከዘመናዊ አስተማማኝነት ጋር ይገናኛል። በኢትዮጵያ ባህላዊ ቅርስ ልብ ውስጥ የሚገኝ ፍጹም መኖሪያዎ.",
+                "hero.cta.rooms": "ክፍሎቻችንን ይመልከቱ",
+                "hero.cta.contact": "አግኙን",
+                "highlights.title": "ለምን ኢትዮጵያ ሆቴል መምረጥ ይገባል",
+                "highlights.subtitle": "በጎንደር ለጉዞ ሰጪዎች ተመራጭ ምርጫ የምንሆንበትን ምክንያት ይፈልጉ",
+                "highlight1.title": "ፕራይም ቦታ",
+                "highlight1.text": "በጎንደር መሃል ላይ የሚገኝ፣ ከፋሲል ግቢ፣ ከንጉሳዊ ክበብ እና ከሌሎች የዩኔስኮ ዓለም አቀፍ ቅርሶች ጥቂት ደቂቃዎች ብቻ ይርቃል። የከተማዋን ባለሀብት ታሪክ ለመጠናቀቅ ፍጹም ነው።",
+                "highlight2.title": "እውነተኛ አገልግሎት",
+                "highlight2.text": "ለዘመናት እንግዶችን በማገልገል የተገነባ እውነተኛ የኢትዮጵያ አገልግሎትን ይለማመዱ። ሰራተኞቻችን መኖሪያዎን ተገቢ እና ምቹ ለማድረግ ተሰማርተዋል።",
+                "highlight3.title": "በጣም ጥሩ ምግብ",
+                "highlight3.text": "በምግብ ቤታችን የኢትዮጵያን ምግብ እና ዓለም አቀፍ ምግቦች ይቀምሱ። ትኩስ ንጥረ ነገሮች፣ እውነተኛ ጣዕሞች እና ሞቅ ያለ አካባቢ ይጠብቁዎታል።",
+                "about.title": "ከ1985 ጀምሮ የአገልግሎት ቅርስ",
+                "about.text1": "ኢትዮጵያ ሆቴል ከሶስት አስርት ዓመታት በላይ በጎንደር ውስጥ የአስተማማኝነት እና አገልግሎት ምልክት ነበር። እንግዶችን እውነተኛ የኢትዮጵያ ሞቅ ያለ አገልግሎት ከዘመናዊ አገልግሎቶች ጋር ለመስጠት በማሰብ የተመሰረተ ሲሆን ከዓለም ዙሪያ የሚመጡ እንግዶችን አቅርበናል።",
+                "about.text2": "ሆቴላችን የኢትዮጵያን ባህላዊ ስነ-ህንፃ ከዘመናዊ ዲዛይን ጋር በማጣመር የተለየ አካባቢ ይፈጥራል፣ ይህም ቅርሳችንን እና ለዘመናዊ አስተማማኝነት ቁርጠኝነታችንን ያንፀባርቃል። እያንዳንዱ ቦታ መኖሪያዎ ተገቢ እና አስደሳች እንዲሆን በማሰብ የተነደፈ ነው።",
+                "about.stat1": "ዓመታት ተሞክሮ",
+                "about.stat2": "ክፍሎች እና ስፒቶች",
+                "about.stat3": "አገልግሎት",
+                "services.title": "የሆቴላችን አገልግሎቶች",
+                "services.subtitle": "ለተስማሚ እና ምቹ መኖሪያ የሚያስፈልገዎት ሁሉ",
+                "service1.title": "ፈጣን ዊፋይ",
+                "service1.text": "በሙሉ ሆቴሉ ውስጥ ነፃ ፈጣን ኢንተርኔት",
+                "service2.title": "ምግብ ቤት እና ባር",
+                "service2.text": "ባህላዊ የኢትዮጵያ እና ዓለም አቀፍ ምግቦች",
+                "service3.title": "ደህንነቱ የተጠበቀ ፓርኪንግ",
+                "service3.text": "24/7 የተጠበቀ ፓርኪንግ ተቋም",
+                "service4.title": "24/7 ሬሲፕሽን",
+                "service4.text": "ቀን እና ሌሊት ኮንሲየርጅ አገልግሎት",
+                "service5.title": "ላንድሪ አገልግሎት",
+                "service5.text": "ዕለታዊ ላንድሪ እና ደረቅ ማጽጃ",
+                "service6.title": "ደህንነት",
+                "service6.text": "CCTV ክትትል እና የደህንነት ሰራተኞች",
+                "footer.name": "ኢትዮጵያ ሆቴል",
+                "footer.tagline": "የጎንደር ክብር ያለው የአገልግሎት መድረሻ",
+                "footer.quicklinks": "ፈጣን አገናኞች",
+                "footer.home": "መነሻ",
+                "footer.rooms": "ክፍሎች እና ስፒቶች",
+                "footer.services": "አገልግሎቶች",
+                "footer.about": "ስለኛ",
+                "footer.contact": "አግኙን",
+                "footer.contactus": "አግኙን",
+                "footer.address": "ጎንደር ከተማ መሃል፣ ጎንደር፣ ኢትዮጵያ",
+                "footer.phone": "+251 XX XXX XXXX",
+                "footer.email": "info@ethiopiahotel-gondar.com",
+                "footer.hours": "24/7 ሬሲፕሽን እና አገልግሎቶች",
+                "footer.copyright": "ኢትዮጵያ ሆቴል ጎንደር. ሁሉም መብቶች የተጠበቁ ናቸው."
+            }
+        };
+
+        // Language Switcher
+        class LanguageSwitcher {
+            constructor() {
+                this.currentLang = localStorage.getItem('preferredLang') || 'en';
+                this.textElements = document.querySelectorAll('[data-key]');
+                this.langButtons = document.querySelectorAll('.lang-btn');
+                this.init();
+            }
+
+            init() {
+                this.updatePageText();
+                this.setupEventListeners();
+                this.updateLangToggle();
+                this.updateFontFamily();
+            }
+
+            updatePageText() {
+                this.textElements.forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    const translation = translations[this.currentLang][key];
+                    
+                    if (translation !== undefined) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.placeholder = translation;
+                        } else {
+                            element.textContent = translation;
+                        }
+                    }
+                });
+
+                document.documentElement.setAttribute('data-lang', this.currentLang);
+                document.documentElement.lang = this.currentLang;
+                this.updateFontFamily();
+            }
+
+            setupEventListeners() {
+                this.langButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const newLang = e.target.getAttribute('data-lang');
+                        if (newLang !== this.currentLang) {
+                            this.switchLanguage(newLang);
+                        }
+                    });
+                });
+            }
+
+            switchLanguage(newLang) {
+                this.currentLang = newLang;
+                localStorage.setItem('preferredLang', newLang);
+                this.updatePageText();
+                this.updateLangToggle();
+            }
+
+            updateLangToggle() {
+                this.langButtons.forEach(button => {
+                    const lang = button.getAttribute('data-lang');
+                    button.classList.toggle('active', lang === this.currentLang);
+                });
+            }
+
+            updateFontFamily() {
+                if (this.currentLang === 'am') {
+                    document.body.classList.add('amharic-font');
+                } else {
+                    document.body.classList.remove('amharic-font');
+                }
+            }
+        }
+
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize language switcher
+            new LanguageSwitcher();
+
+            // Mobile menu
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.nav-container') && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                }
+            });
+
+            // Update copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Close mobile menu if open
+                            if (navMenu.classList.contains('active')) {
+                                navMenu.classList.remove('active');
+                                mobileMenuBtn.classList.remove('active');
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Scroll animations
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.padding = '10px 0';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.padding = '15px 0';
+                    header.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Ethiopia Hotel Gondar - Our history, hospitality tradition, and commitment to excellence since 1985">
+    <title>About Us | Ethiopia Hotel Gondar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #d4af37;
+            --accent: #2d3748;
+            --light: #f8f9fa;
+            --dark: #2d3436;
+            --white: #ffffff;
+            --gray: #718096;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .amharic-font {
+            font-family: 'Noto Sans Ethiopic', 'Inter', sans-serif;
+        }
+
+        /* Language Toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--white);
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            display: flex;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .lang-btn {
+            padding: 10px 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--primary);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: rgba(26, 54, 93, 0.05);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary);
+        }
+
+        .logo-icon {
+            font-size: 28px;
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hotel-name {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .location {
+            font-size: 12px;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-top: 2px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 15px;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 100px;
+        }
+
+        .page-header {
+            background: linear-gradient(rgba(26, 54, 93, 0.9), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .page-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* About Content */
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        /* History Section */
+        .history-section {
+            margin-bottom: 100px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .history-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .history-image {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .history-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .history-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .history-text p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        /* Mission & Values */
+        .mission-section {
+            background: var(--light);
+            padding: 100px 20px;
+            margin: 100px 0;
+        }
+
+        .mission-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mission-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .mission-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary);
+            transform: scaleX(0);
+            transition: var(--transition);
+            transform-origin: left;
+        }
+
+        .mission-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 32px;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .mission-card:hover .mission-icon {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .mission-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .mission-card p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 20px;
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .team-member {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .member-image {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .member-info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .member-info h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .member-info p {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .member-info .bio {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-top: 10px;
+        }
+
+        /* Timeline */
+        .timeline-section {
+            background: var(--light);
+            padding: 100px 20px;
+            margin: 100px 0;
+        }
+
+        .timeline-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: var(--secondary);
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            width: 50%;
+            padding: 0 40px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            border: 3px solid var(--secondary);
+            border-radius: 50%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -50px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -50px;
+        }
+
+        .timeline-year {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 100px 20px;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--secondary);
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--primary), #2c5282);
+            color: var(--white);
+            padding: 80px 20px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 40px;
+            background: var(--secondary);
+            color: var(--primary);
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: #e6c230;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 80px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after, .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .history-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .history-image {
+                order: 2;
+            }
+            
+            .history-text {
+                order: 1;
+            }
+            
+            .timeline-container::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 80px;
+                padding-right: 20px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: var(--shadow-lg);
+                text-align: center;
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .mission-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-slider {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .mission-card,
+            .testimonial-card {
+                padding: 30px 20px;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="am">አማ</button>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="hotel-name" data-en="Ethiopia Hotel" data-am="ኢትዮጵያ ሆቴል">Ethiopia Hotel</span>
+                    <span class="location" data-en="Gondar, Ethiopia" data-am="ጎንደር, ኢትዮጵያ">Gondar, Ethiopia</span>
+                </div>
+            </a>
+            
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" data-en="Home" data-am="መነሻ">Home</a></li>
+                <li><a href="rooms.html" data-en="Rooms & Services" data-am="ክፍሎች እና አገልግሎቶች">Rooms & Services</a></li>
+                <li><a href="menu.html" data-en="Menu" data-am="ምናሌ">Menu</a></li>
+                <li><a href="about.html" data-en="About" data-am="ስለኛ">About</a></li>
+                <li><a href="contact.html" data-en="Contact" data-am="አግኙን">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1 data-en="Our Story" data-am="የእኛ ታሪክ">Our Story</h1>
+            <p data-en="A legacy of hospitality and excellence in Gondar since 1985" 
+               data-am="ከ1985 ጀምሮ በጎንደር ውስጥ የአገልግሎት እና የልህቀት ቅርስ">
+                A legacy of hospitality and excellence in Gondar since 1985
+            </p>
+        </section>
+
+        <!-- About Content -->
+        <div class="about-content">
+            <!-- History Section -->
+            <section class="history-section">
+                <div class="section-title">
+                    <h2 data-en="Our History" data-am="ታሪካችን">Our History</h2>
+                    <p data-en="From humble beginnings to Gondar's premier hospitality destination" 
+                       data-am="ከትሑት መነሻ አንስቶ እስከ ጎንደር ክብር ያለው የአገልግሎት መድረሻ">
+                        From humble beginnings to Gondar's premier hospitality destination
+                    </p>
+                </div>
+
+                <div class="history-content">
+                    <div class="history-image">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Ethiopia Hotel History">
+                    </div>
+                    
+                    <div class="history-text">
+                        <p data-en="Ethiopia Hotel was founded in 1985 by Alemayehu Kebede, a visionary entrepreneur who recognized the need for quality accommodation in Gondar. What started as a modest 12-room guesthouse has grown into a 50-room premier hotel, serving travelers from around the world."
+                               data-am="ኢትዮጵያ ሆቴል በ1985 በአለማየሁ ከበደ ተመሠረተ፣ እሱም በጎንደር ውስጥ ጥራት ያለው መኖሪያ አስፈላጊነትን ያየ ራእይ ያለው ስራ ፈጣሪ ነበር። እንደ ትሑት 12 ክፍል ጎስት ሃውስ የጀመረው ወደ 50 ክፍል ክብር ያለው ሆቴል አድጓል፣ ከዓለም ዙሪያ የሚመጡ ጉዞ ሰጪዎችን በማገልገል ላይ ይገኛል።">
+                            Ethiopia Hotel was founded in 1985 by Alemayehu Kebede, a visionary entrepreneur who recognized the need for quality accommodation in Gondar. What started as a modest 12-room guesthouse has grown into a 50-room premier hotel, serving travelers from around the world.
+                        </p>
+                        
+                        <p data-en="Over the decades, we have preserved our commitment to authentic Ethiopian hospitality while embracing modern amenities. Our hotel has witnessed Gondar's transformation and has played a vital role in welcoming tourists to Ethiopia's historical treasures."
+                               data-am="በረጅም ዓመታት ውስጥ፣ ዘመናዊ አገልግሎቶችን በመቀበል እውነተኛ የኢትዮጵያ አገልግሎት ቁርጠኝነታችንን ጠብቀናል። ሆቴላችን የጎንደርን ለውጥ አይቶ ቱሪስቶችን በኢትዮጵያ ታሪካዊ ቅርሶች ላይ ለማስተናገድ አስፈላጊ ሚና ተጫውቷል።">
+                            Over the decades, we have preserved our commitment to authentic Ethiopian hospitality while embracing modern amenities. Our hotel has witnessed Gondar's transformation and has played a vital role in welcoming tourists to Ethiopia's historical treasures.
+                        </p>
+                        
+                        <p data-en="Today, Ethiopia Hotel stands as a landmark of comfort and reliability in Gondar. We are proud to have served generations of travelers and continue our tradition of excellence for many years to come."
+                               data-am="ዛሬ፣ ኢትዮጵያ ሆቴል በጎንደር ውስጥ እንደ አስተማማኝነት እና ታማኝነት ምልክት ይቆማል። የተለያዩ የጉዞ ሰጪዎችን ስንደረግ በማደርግ በግርግር እና ለብዙ ዓመታት የልህቀት ባህላችንን ለመቀጠል እንደምንችል እጅግ በጣም እንግረባለን።">
+                            Today, Ethiopia Hotel stands as a landmark of comfort and reliability in Gondar. We are proud to have served generations of travelers and continue our tradition of excellence for many years to come.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mission & Values -->
+            <section class="mission-section">
+                <div class="mission-container">
+                    <div class="section-title">
+                        <h2 data-en="Our Mission & Values" data-am="የእኛ ተልእኮ እና እሴቶች">Our Mission & Values</h2>
+                        <p data-en="Guiding principles that define our hospitality" 
+                           data-am="የአገልግሎታችንን የሚገልጹ መሪ መርሆዎች">
+                            Guiding principles that define our hospitality
+                        </p>
+                    </div>
+
+                    <div class="mission-cards">
+                        <div class="mission-card fade-in">
+                            <div class="mission-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3 data-en="Authentic Hospitality" data-am="እውነተኛ አገልግሎት">Authentic Hospitality</h3>
+                            <p data-en="We provide genuine Ethiopian warmth and care, making every guest feel at home with our traditional values of respect and generosity."
+                                   data-am="እውነተኛ የኢትዮጵያ ሞቅ ያለ አገልግሎት እና እንክብካቤ እንሰጣለን፣ እያንዳንዱን እንግዳ በቤታችን እንደሚሰማ በማድረግ በምርጫ እና በገርነት ባህላዊ እሴቶቻችንን እናሳያለን።">
+                                We provide genuine Ethiopian warmth and care, making every guest feel at home with our traditional values of respect and generosity.
+                            </p>
+                        </div>
+
+                        <div class="mission-card fade-in">
+                            <div class="mission-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 data-en="Commitment to Excellence" data-am="ለልህቀት ቁርጠኝነት">Commitment to Excellence</h3>
+                            <p data-en="We continuously improve our services and facilities to exceed guest expectations, maintaining the highest standards of quality and comfort."
+                                   data-am="የእንግዶችን ግምቶች ለማለፍ አገልግሎቶቻችንን እና ተቋማችንን በቋሚነት እናሻሽላለን፣ ከፍተኛ የጥራት እና የአስተማማኝነት ደረጃዎችን በመጠበቅ።">
+                                We continuously improve our services and facilities to exceed guest expectations, maintaining the highest standards of quality and comfort.
+                            </p>
+                        </div>
+
+                        <div class="mission-card fade-in">
+                            <div class="mission-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 data-en="Cultural Preservation" data-am="ባህላዊ ጥበቃ">Cultural Preservation</h3>
+                            <p data-en="We celebrate and preserve Ethiopian culture through our architecture, cuisine, and service, offering guests an authentic experience of our heritage."
+                                   data-am="በስነ-ህንፃችን፣ በምግባችን እና በአገልግሎታችን የኢትዮጵያን ባህል እናከብራለን እና እንጠብቃለን፣ ለእንግዶች የቅርሳችንን እውነተኛ ልምድ እንሰጣለን።">
+                                We celebrate and preserve Ethiopian culture through our architecture, cuisine, and service, offering guests an authentic experience of our heritage.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timeline -->
+            <section class="timeline-section">
+                <div class="section-title">
+                    <h2 data-en="Our Journey" data-am="ጉዞያችን">Our Journey</h2>
+                    <p data-en="Milestones in our history of hospitality" 
+                       data-am="በአገልግሎት ታሪካችን ውስጥ ያሉ ወሳኝ ነጥቦች">
+                        Milestones in our history of hospitality
+                    </p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1985</div>
+                            <h3 class="timeline-title" data-en="Hotel Founding" data-am="ሆቴሉ መሠረት">Hotel Founding</h3>
+                            <p data-en="Ethiopia Hotel opens with 12 rooms, becoming one of Gondar's first modern guesthouses"
+                                   data-am="ኢትዮጵያ ሆቴል በ12 ክፍሎች ተከፍቷል፣ ከጎንደር የመጀመሪያ ዘመናዊ ጎስት ሃውሶች አንዱ ሆኗል">
+                                Ethiopia Hotel opens with 12 rooms, becoming one of Gondar's first modern guesthouses
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">1995</div>
+                            <h3 class="timeline-title" data-en="First Expansion" data-am="መጀመሪያ ማስፋፊያ">First Expansion</h3>
+                            <p data-en="Hotel expands to 25 rooms and adds restaurant service, introducing traditional Ethiopian cuisine"
+                                   data-am="ሆቴሉ ወደ 25 ክፍሎች ተስፋፍቷል እና የምግብ ቤት አገልግሎት ጨምሯል፣ ባህላዊ የኢትዮጵያ ምግብ አስተዋውቋል">
+                                Hotel expands to 25 rooms and adds restaurant service, introducing traditional Ethiopian cuisine
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2005</div>
+                            <h3 class="timeline-title" data-en="Major Renovation" data-am="ዋና የማሻሻያ">Major Renovation</h3>
+                            <p data-en="Complete renovation with modern amenities while preserving traditional Ethiopian architectural elements"
+                                   data-am="ሙሉ ማሻሻያ በዘመናዊ አገልግሎቶች ጋር ባህላዊ የኢትዮጵያ የስነ-ህንፃ አካላትን በመጠበቅ">
+                                Complete renovation with modern amenities while preserving traditional Ethiopian architectural elements
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2015</div>
+                            <h3 class="timeline-title" data-en="30th Anniversary" data-am="30ኛ ዓመት በዓል">30th Anniversary</h3>
+                            <p data-en="Celebrating 30 years of service with expansion to 50 rooms and new conference facilities"
+                                   data-am="30 ዓመት አገልግሎት በ50 ክፍሎች እና አዲስ የስብሰባ ተቋማት ማስፋፊያ ተከብረዋል">
+                                Celebrating 30 years of service with expansion to 50 rooms and new conference facilities
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-year">2023</div>
+                            <h3 class="timeline-title" data-en="Digital Transformation" data-am="ዲጂታል ለውጥ">Digital Transformation</h3>
+                            <p data-en="Launch of modern website and digital services to better serve international travelers"
+                                   data-am="ዘመናዊ ድር ጣቢያ እና ዲጂታል አገልግሎቶች ለማህበረሰብ አገልግሎት ለማሻሻል መክፈት">
+                                Launch of modern website and digital services to better serve international travelers
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team Section -->
+            <section class="team-section">
+                <div class="team-container">
+                    <div class="section-title">
+                        <h2 data-en="Our Leadership" data-am="መሪነታችን">Our Leadership</h2>
+                        <p data-en="The dedicated team behind our success" 
+                           data-am="በስኬታችን ላይ ያሉት ቁርጠኛ ቡድን">
+                            The dedicated team behind our success
+                        </p>
+                    </div>
+
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hotel Manager">
+                            </div>
+                            <div class="member-info">
+                                <h3 data-en="Alemayehu Kebede" data-am="አለማየሁ ከበደ">Alemayehu Kebede</h3>
+                                <p data-en="Founder & General Manager" data-am="መስራች እና አጠቃላይ አስተዳዳሪ">Founder & General Manager</p>
+                                <div class="bio" data-en="With 38 years in hospitality, Alemayehu's vision continues to guide Ethiopia Hotel's commitment to excellence."
+                                                     data-am="በ38 ዓመት የአገልግሎት ልምድ አለው፣ የአለማየሁ ራእይ የኢትዮጵያ ሆቴልን ለልህቀት ቁርጠኝነት መመሪያ ሆኖ ይቀጥላል።">
+                                    With 38 years in hospitality, Alemayehu's vision continues to guide Ethiopia Hotel's commitment to excellence.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Operations Manager">
+                            </div>
+                            <div class="member-info">
+                                <h3 data-en="Mekdes Bekele" data-am="መክደስ በቀለ">Mekdes Bekele</h3>
+                                <p data-en="Operations Manager" data-am="የክወና አስተዳዳሪ">Operations Manager</p>
+                                <div class="bio" data-en="15 years of experience ensuring seamless hotel operations and exceptional guest experiences."
+                                                     data-am="15 ዓመት ልምድ ሆቴሉ ያለምንም ችግር እንዲሰራ እና ልዩ የእንግዶች ልምዶችን ማረጋገጥ።">
+                                    15 years of experience ensuring seamless hotel operations and exceptional guest experiences.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="team-member">
+                            <div class="member-image">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Head Chef">
+                            </div>
+                            <div class="member-info">
+                                <h3 data-en="Tewodros Girma" data-am="ጴዎድሮስ ግርማ">Tewodros Girma</h3>
+                                <p data-en="Executive Chef" data-am="አጠቃላይ ሣሉ">Executive Chef</p>
+                                <div class="bio" data-en="Master of traditional Ethiopian cuisine with 20 years of culinary expertise and innovation."
+                                                     data-am="ባህላዊ የኢትዮጵያ ምግብ አማካሪ በ20 ዓመት የምግብ ሙያ ልምድ እና ፈጠራ።">
+                                    Master of traditional Ethiopian cuisine with 20 years of culinary expertise and innovation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials -->
+            <section class="testimonials-section">
+                <div class="testimonials-container">
+                    <div class="section-title">
+                        <h2 data-en="Guest Experiences" data-am="የእንግዶች ልምዶች">Guest Experiences</h2>
+                        <p data-en="What our guests say about their stay" 
+                           data-am="እንግዶቻችን ስለ መኖሪያቸው የሚናገሩት">
+                            What our guests say about their stay
+                        </p>
+                    </div>
+
+                    <div class="testimonials-slider">
+                        <div class="testimonial-card fade-in">
+                            <div class="testimonial-text">
+                                <p data-en=""“The authentic Ethiopian hospitality here is unmatched. The staff made us feel like family from the moment we arrived. The traditional coffee ceremony was a highlight of our trip!""
+                                           data-am=""“እዚህ ያለው እውነተኛ የኢትዮጵያ አገልግሎት ማነጻጸር የለውም። ሰራተኞቹ ከደረስንበት ጊዜ ጀምሮ እንደ ቤተሰብ አስተሰማን። ባህላዊው ቡና ሥነ ሥርዓት የጉዞያችን ዋና ነጥብ ነበር!"">
+                                    "The authentic Ethiopian hospitality here is unmatched. The staff made us feel like family from the moment we arrived. The traditional coffee ceremony was a highlight of our trip!"
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4 data-en="Sarah Johnson" data-am="ሳራ ጆንሰን">Sarah Johnson</h4>
+                                    <p data-en="Traveler from USA" data-am="ከአሜሪካ ጉዞ ሰጪ">Traveler from USA</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card fade-in">
+                            <div class="testimonial-text">
+                                <p data-en=""“As a frequent business traveler to Gondar, Ethiopia Hotel has become my home away from home. The rooms are comfortable, the WiFi is reliable, and the location is perfect for meetings.""
+                                           data-am=""“በጎንደር በተደጋጋሚ የሚጓዝ ንግድ ጉዞ ሰጪ እንደ ሆንኩ፣ ኢትዮጵያ ሆቴል ከቤቴ ውጭ ያለው ቤቴ ሆኗል። ክፍሎቹ አስተማማኝ ናቸው፣ ዊፋዩ ታማኝ ነው፣ እና ቦታው ለስብሰባዎች ፍጹም ነው።"">
+                                    "As a frequent business traveler to Gondar, Ethiopia Hotel has become my home away from home. The rooms are comfortable, the WiFi is reliable, and the location is perfect for meetings."
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4 data-en="Michael Chen" data-am="ማይክል ቸን">Michael Chen</h4>
+                                    <p data-en="Business Executive" data-am="የንግድ አገልጋይ">Business Executive</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="testimonial-card fade-in">
+                            <div class="testimonial-text">
+                                <p data-en=""“The attention to detail and preservation of Ethiopian culture is remarkable. From the architecture to the food, everything reflects the rich heritage of this beautiful country.""
+                                           data-am=""“ለዝርዝር ትኩረት እና የኢትዮጵያ ባህል ጥበቃ አስደናቂ ነው። ከስነ-ህንፃ አንስቶ እስከ ምግብ፣ ሁሉም ነገር የዚህች ቆንጆ ሀገር ሀብታም ቅርስን ያንፀባርቃል።"">
+                                    "The attention to detail and preservation of Ethiopian culture is remarkable. From the architecture to the food, everything reflects the rich heritage of this beautiful country."
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <div class="author-avatar">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <div class="author-info">
+                                    <h4 data-en="Dr. Elena Rossi" data-am="ዶክተር ኤሌና ሮሲ">Dr. Elena Rossi</h4>
+                                    <p data-en="Cultural Anthropologist" data-am="ባህላዊ ሰው ምረጥ">Cultural Anthropologist</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact CTA -->
+            <section class="contact-cta">
+                <h2 data-en="Experience Our Hospitality" data-am="የእኛን አገልግሎት ይለማመዱ">Experience Our Hospitality</h2>
+                <p data-en="Join us at Ethiopia Hotel and discover the authentic warmth of Gondar" 
+                   data-am="በኢትዮጵያ ሆቴል ውስጥ ይቀላቀሉን እና የጎንደርን እውነተኛ ሞቅ ያለ አገልግሎት ይፈልጉ">
+                    Join us at Ethiopia Hotel and discover the authentic warmth of Gondar
+                </p>
+                <a href="contact.html" class="cta-button">
+                    <i class="fas fa-phone-alt"></i>
+                    <span data-en="Contact Us Today" data-am="ዛሬ ያግኙን">Contact Us Today</span>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3 data-en="Ethiopia Hotel" data-am="ኢትዮጵያ ሆቴል">Ethiopia Hotel</h3>
+                <p data-en="Gondar's Premier Hospitality Destination" 
+                   data-am="የጎንደር ክብር ያለው የአገልግሎት መድረሻ">
+                    Gondar's Premier Hospitality Destination
+                </p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4 data-en="Quick Links" data-am="ፈጣን አገናኞች">Quick Links</h4>
+                <ul>
+                    <li><a href="index.html" data-en="Home" data-am="መነሻ">Home</a></li>
+                    <li><a href="rooms.html" data-en="Rooms & Services" data-am="ክፍሎች እና አገልግሎቶች">Rooms & Services</a></li>
+                    <li><a href="menu.html" data-en="Restaurant Menu" data-am="የምግብ ቤት ምናሌ">Restaurant Menu</a></li>
+                    <li><a href="about.html" data-en="About Us" data-am="ስለኛ">About Us</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-am="አግኙን">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4 data-en="Contact Us" data-am="አግኙን">Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 
+                    <span data-en="Gondar City Center, Gondar, Ethiopia" 
+                          data-am="ጎንደር ከተማ መሃል፣ ጎንደር፣ ኢትዮጵያ">
+                        Gondar City Center, Gondar, Ethiopia
+                    </span>
+                </p>
+                <p><i class="fas fa-phone-alt"></i> 
+                    <span data-en="+251 XX XXX XXXX" data-am="+251 XX XXX XXXX">+251 XX XXX XXXX</span>
+                </p>
+                <p><i class="fas fa-envelope"></i> 
+                    <span data-en="info@ethiopiahotel-gondar.com" 
+                          data-am="info@ethiopiahotel-gondar.com">
+                        info@ethiopiahotel-gondar.com
+                    </span>
+                </p>
+                <p><i class="fas fa-clock"></i> 
+                    <span data-en="24/7 Reception & Services" 
+                          data-am="24/7 ሬሲፕሽን እና አገልግሎቶች">
+                        24/7 Reception & Services
+                    </span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; <span id="current-year"></span> 
+                <span data-en="Ethiopia Hotel Gondar. All Rights Reserved." 
+                      data-am="ኢትዮጵያ ሆቴል ጎንደር. ሁሉም መብቶች የተጠበቁ ናቸው.">
+                    Ethiopia Hotel Gondar. All Rights Reserved.
+                </span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simplified Language Switcher
+        class LanguageSwitcher {
+            constructor() {
+                this.currentLang = localStorage.getItem('preferredLang') || 'en';
+                this.langButtons = document.querySelectorAll('.lang-btn');
+                this.init();
+            }
+
+            init() {
+                this.updatePageText();
+                this.setupEventListeners();
+                this.updateLangToggle();
+                this.updateFontFamily();
+            }
+
+            updatePageText() {
+                // Update all elements with data-en and data-am attributes
+                document.querySelectorAll('[data-en]').forEach(element => {
+                    const text = element.getAttribute(`data-${this.currentLang}`);
+                    if (text) {
+                        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                            element.placeholder = text;
+                        } else {
+                            // Handle quotes in text
+                            const cleanText = text.replace(/^"(.*)"$/, '$1');
+                            element.textContent = cleanText;
+                        }
+                    }
+                });
+
+                // Update HTML attributes
+                document.documentElement.setAttribute('data-lang', this.currentLang);
+                document.documentElement.lang = this.currentLang;
+                this.updateFontFamily();
+            }
+
+            setupEventListeners() {
+                this.langButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const newLang = e.target.getAttribute('data-lang');
+                        if (newLang !== this.currentLang) {
+                            this.switchLanguage(newLang);
+                        }
+                    });
+                });
+            }
+
+            switchLanguage(newLang) {
+                this.currentLang = newLang;
+                localStorage.setItem('preferredLang', newLang);
+                this.updatePageText();
+                this.updateLangToggle();
+            }
+
+            updateLangToggle() {
+                this.langButtons.forEach(button => {
+                    const lang = button.getAttribute('data-lang');
+                    button.classList.toggle('active', lang === this.currentLang);
+                });
+            }
+
+            updateFontFamily() {
+                if (this.currentLang === 'am') {
+                    document.body.classList.add('amharic-font');
+                } else {
+                    document.body.classList.remove('amharic-font');
+                }
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize language switcher
+            new LanguageSwitcher();
+
+            // Mobile menu
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    this.classList.toggle('active');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.nav-container') && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                }
+            });
+
+            // Update copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Close mobile menu if open
+                            if (navMenu.classList.contains('active')) {
+                                navMenu.classList.remove('active');
+                                mobileMenuBtn.classList.remove('active');
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Scroll animations
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                fadeObserver.observe(element);
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                if (window.scrollY > 100) {
+                    header.style.padding = '10px 0';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.padding = '15px 0';
+                    header.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
